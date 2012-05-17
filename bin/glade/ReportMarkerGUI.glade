@@ -47,7 +47,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton1">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.r">
                             <property name="label" translatable="yes">Is there one?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -62,7 +62,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton2">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.r2">
                             <property name="label" translatable="yes">Are the requirements complete?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -197,7 +197,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                   </object>
                 </child>
                 <child type="tab">
-                  <object class="GtkLabel" id="label1">
+                  <object class="GtkLabel" id="ReportMarkerGUI_r1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">&lt;b&gt;Requirements&lt;/b&gt;</property>
@@ -216,7 +216,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton3">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a1">
                             <property name="label" translatable="yes">Is there one?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -231,7 +231,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton4">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a2">
                             <property name="label" translatable="yes">Does it expand on the requirements?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -246,7 +246,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton5">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a3">
                             <property name="label" translatable="yes">Does it treat the problem as a black box?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -261,7 +261,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton6">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a4">
                             <property name="label" translatable="yes">Does it identify the user?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -276,7 +276,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton7">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a5">
                             <property name="label" translatable="yes">Analysis of inputs (units and range)?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -291,7 +291,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton8">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a6">
                             <property name="label" translatable="yes">Analysis of outputs (units and range)?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -306,7 +306,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkCheckButton" id="checkbutton9">
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a7">
                             <property name="label" translatable="yes">Analysis of known processes/algorithms?</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
