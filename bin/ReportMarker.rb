@@ -1,19 +1,10 @@
 class ReportMarker
   require 'prawn'
 
-  @@input_filename = "assets/assignment-mark-form.pdf"
+  @@marking_form_filename = "assets/assignment-mark-form.pdf"
    
   def self.input_filename
-    @@input_filename
-  end
-  
-  def self.test_marks
-    marks = Hash.new
-    marks[:requirements] = [1,0]
-    marks[:analysis] = [1,1,1,1,1,1,1]
-    marks[:specification] = [1,1,1]
-    marks[:design] = [1,1,1,1,1,1,1,1,1,1,1]
-    marks
+    @@marking_form_filename
   end
   
   def self.output_filename(student_number)
@@ -46,7 +37,7 @@ class ReportMarker
     specification_position = {:y => 411}
     design_position = {:y => 342}
       
-    Prawn::Document.generate(output_filename(student_number), :template => @@input_filename, :template_page => 1) do
+    Prawn::Document.generate(output_filename(student_number), :template => @@marking_form_filename, :template_page => 1) do
       
       create_stamp("marker_name") do
         draw_text marker_name, :at => [0, 0]
