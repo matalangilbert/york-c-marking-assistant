@@ -22,16 +22,10 @@ class ReportMarkerGUI < ReportMarker
 	end
   
 	def buttonSave__clicked(button)
-		get_glade_all()
+		get_glade_all() # get values of controls
     
-    unless @marker_name.empty? || @student_number.length < 2
+    if all_details_present?
       ReportMarker.generate(@marker_name, @student_number, marks)
-    end
-    if @marker_name.empty?
-      VR::Dialog.message_box("You forgot to fill in your name! Please put it in the box at the top.", title = "Marking Assistant")
-    end
-    if @student_number.length < 2
-      VR::Dialog.message_box("Did you forget to fill in the student number? It should be more than 2 characters long.", title = "Marking Assistant")
     end
 	end
   
@@ -41,6 +35,22 @@ class ReportMarkerGUI < ReportMarker
       :specification => specification_totalled,
       :design => design_totalled,
     }
+  end
+  
+  def show_validation_problems
+    if @marker_name.empty?
+      VR::Dialog.message_box("You forgot to fill in your name! Please put it in the box at the top.", title = "Marking Assistant")
+    end
+    if @student_number.length < 2
+      VR::Dialog.message_box("Did you forget to fill in the student number? It should be more than 2 characters long.", title = "Marking Assistant")
+    end
+  end
+  
+  def all_details_present?
+    if answer = (@marker_name.empty? || @student_number.length < 2)
+      show_validation_problems
+    end
+    !answer
   end
   
   def requirements_totalled
