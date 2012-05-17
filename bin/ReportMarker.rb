@@ -35,7 +35,7 @@ class ReportMarker
       raise Exception.new "input hash[#{input_error}] has incorrect length"
     end
     
-    output_filename = "#{student_number}_c_part_one.pdf"
+    output_filename = "completed_marksheets/#{student_number}_c_part_one.pdf"
     
     x = 385
     total_mark_position = {:y => 660}
