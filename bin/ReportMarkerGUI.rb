@@ -3,7 +3,7 @@ class ReportMarkerGUI < ReportMarker
 	include GladeGUI
 
 	def initialize
-		@r1 = true
+		@r1 = false
 		@r2 = false
 	end
 
@@ -15,7 +15,7 @@ class ReportMarkerGUI < ReportMarker
 	
 	def buttonSave__clicked(button)
 		get_glade_all()
-		VR::Dialog.message_box("Reqirement 1) #{@r1} 2) #{@r2}")
+		VR::Dialog.message_box("Reqirement 1) #{@a1} 2) #{@r2}")
 	end
 
 end
