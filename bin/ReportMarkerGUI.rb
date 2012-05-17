@@ -11,6 +11,8 @@ class ReportMarkerGUI < ReportMarker
     @d5_2 = @d5_3 = @d6 = @d6_2 = @d7 = @d7_2 = false
     @d8 = @d8_2 = @d8_3 = @d9 = @d9_2 = @d9_3 = @d10 = false
     @d10_2 = @d10_3 = @d11 = @d11_2 = false
+    @marker_name = nil
+    @student_number = "Y"
 	end
 
 	def show()
@@ -21,12 +23,22 @@ class ReportMarkerGUI < ReportMarker
   
 	def buttonSave__clicked(button)
 		get_glade_all()
-    
+
+    p marks.inspect
+     
+		#VR::Dialog.message_box("Requirement 1) #{@a1} 2) #{@r2}")
+	end
+  
+  def marks
+    marks = {:requirements => requirements_totalled,
+      :analysis => analysis_totalled,
+      :specification => specification_totalled,
+      :design => design_totalled,
+    }
+  end
+  
+  def requirements_totalled
     requirements_combined = Array.new
-    analysis_combined = Array.new
-    specification_combined = Array.new
-    design_combined = Array.new
-    
     requirements_checkboxes.each do |got_mark|
       if got_mark
         requirements_combined << 1
@@ -34,7 +46,11 @@ class ReportMarkerGUI < ReportMarker
         requirements_combined << 0
       end
     end
-      
+    requirements_combined
+  end
+  
+  def analysis_totalled
+    analysis_combined = Array.new
     analysis_checkboxes.each_with_index do |got_mark, index|
       case index
       when 0..4, 6, 8 # when is a question
@@ -49,7 +65,11 @@ class ReportMarkerGUI < ReportMarker
         end
       end
     end
-    
+    analysis_combined
+  end
+  
+  def specification_totalled
+    specification_combined = Array.new
     specification_checkboxes.each do |got_mark|
       if got_mark
         specification_combined << 1
@@ -57,7 +77,11 @@ class ReportMarkerGUI < ReportMarker
         specification_combined << 0
       end
     end
+    specification_combined
+  end
   
+  def design_totalled
+    design_combined = Array.new
     design_checkboxes.each_with_index do |got_mark, index|
       case index
       when 0, 1, 3, 5, 7, 10, 12, 14, 17, 20, 23 # when is a question
@@ -72,17 +96,8 @@ class ReportMarkerGUI < ReportMarker
         end
       end
     end
-    
-    marks = {:requirements => requirements_combined,
-      :analysis => analysis_combined,
-      :specification => specification_combined,
-      :design => design_combined
-    }
-    
-    p marks.inspect
-     
-		#VR::Dialog.message_box("Requirement 1) #{@a1} 2) #{@r2}")
-	end
+    design_combined
+  end
   
   def requirements_checkboxes
     requirements = Array.new
