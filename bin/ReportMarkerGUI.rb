@@ -27,7 +27,7 @@ class ReportMarkerGUI < ReportMarker
     if all_details_present?
       if File.exists?(ReportMarker.output_filename(@student_number))
         if VR::Dialog.ok_box("You've already completed a marksheet for this student, continuing will overwrite it.", title = "Marking Assistant")
-          ReportMarker.generate(@marker_name, @student_number, marks)
+          ReportMarker.generate_part_one(@marker_name, @student_number, marks)
         end
       end
     end

@@ -11,7 +11,7 @@ class ReportMarker
     "completed_marksheets/#{student_number}_c_part_one.pdf"
   end
   
-  def self.generate(marker_name, student_number, marks)
+  def self.generate_part_one(marker_name, student_number, marks)
     # check for required information
     if marker_name.nil? || marker_name.empty?
       raise Exception.new "marker name cannot be nil or empty"
