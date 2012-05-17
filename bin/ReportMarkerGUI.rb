@@ -25,7 +25,11 @@ class ReportMarkerGUI < ReportMarker
 		get_glade_all() # get values of controls
     
     if all_details_present?
-      ReportMarker.generate(@marker_name, @student_number, marks)
+      if File.exists?(ReportMarker.output_filename(@student_number))
+        if VR::Dialog.ok_box("You've already completed a marksheet for this student, continuing will overwrite it.", title = "Marking Assistant")
+          ReportMarker.generate(@marker_name, @student_number, marks)
+        end
+      end
     end
 	end
   
