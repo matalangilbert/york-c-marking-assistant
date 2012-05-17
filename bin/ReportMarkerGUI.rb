@@ -14,14 +14,98 @@ class ReportMarkerGUI < ReportMarker
 	end
 
 	def show()
-		load_glade(__FILE__)  #loads file, glade/MyClass.glade into @builder
+		load_glade(__FILE__)  #loads file, glade/ReportMarkerGUI.glade into @builder
 		set_glade_all(self) #populates glade controls with insance variables (i.e. Myclass.var1)
 		show_window()
 	end
-	
+  
 	def buttonSave__clicked(button)
 		get_glade_all()
-		VR::Dialog.message_box("Reqirement 1) #{@a1} 2) #{@r2}")
+    
+    requirements_combined = Array.new
+    analysis_combined = Array.new
+    specification_combined = Array.new
+    design_combined = Array.new
+    
+    requirements_checkboxes.each do |got_mark|
+      if got_mark
+        requirements_combined << 1
+      else
+        requirements_combined << 0
+      end
+    end
+      
+    analysis_checkboxes.each_with_index do |got_mark, index|
+      case index
+      when 0..4, 6, 8 # when is a question
+        if got_mark
+          analysis_combined << 1  # add entry to array
+        else
+          analysis_combined << 0
+        end
+      else # increment current question total
+        if got_mark
+          analysis_combined[analysis_combined.length-1] = analysis_combined.last + 1
+        end
+      end
+    end
+    
+    specification_checkboxes.each do |got_mark|
+      if got_mark
+        specification_combined << 1
+      else
+        specification_combined << 0
+      end
+    end
+  
+    design_checkboxes.each_with_index do |got_mark, index|
+      case index
+      when 0, 1, 3, 5, 7, 10, 12, 14, 17, 20, 23 # when is a question
+        if got_mark
+          design_combined << 1 # add entry to array
+        else
+          design_combined << 0
+        end
+      else # increment current question total
+        if got_mark
+          design_combined[design_combined.length-1] = design_combined.last + 1
+        end
+      end
+    end
+    
+    marks = {:requirements => requirements_combined,
+      :analysis => analysis_combined,
+      :specification => specification_combined,
+      :design => design_combined
+    }
+    
+    p marks.inspect
+     
+		#VR::Dialog.message_box("Requirement 1) #{@a1} 2) #{@r2}")
 	end
+  
+  def requirements_checkboxes
+    requirements = Array.new
+    requirements << @r1 << @r2
+  end
+  
+  def analysis_checkboxes
+    analysis = Array.new
+    analysis << @a1 << @a2 << @a3 << @a4 << @a5 << @a5_2 <<
+      @a6 << @a6_2 << @a7 << @a7_2
+  end
+  
+  def specification_checkboxes
+    specification = Array.new
+    specification << @s1 << @s2 << @s3
+  end
+  
+  def design_checkboxes
+    design = Array.new
+    design << @d1 << @d2 << @d2_2 << @d3 << @d3_2 << @d4 <<
+      @d4_2 << @d5 << @d5_2 << @d5_3 << @d6 << @d6_2 << @d7 <<
+      @d7_2 << @d8 << @d8_2 << @d8_3 << @d9 << @d9_2 <<
+      @d9_3 << @d10 << @d10_2 << @d10_3 << @d11 << @d11_2
+  end
 
 end
