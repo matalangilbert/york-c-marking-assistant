@@ -23,10 +23,16 @@ class ReportMarkerGUI < ReportMarker
   
 	def buttonSave__clicked(button)
 		get_glade_all()
-
-    p marks.inspect
-     
-		#VR::Dialog.message_box("Requirement 1) #{@a1} 2) #{@r2}")
+    
+    unless @marker_name.empty? || @student_number.length < 2
+      ReportMarker.generate(@marker_name, @student_number, marks)
+    end
+    if @marker_name.empty?
+      VR::Dialog.message_box("You forgot to fill in your name! Please put it in the box at the top.", title = "Marking Assistant")
+    end
+    if @student_number.length < 2
+      VR::Dialog.message_box("Did you forget to fill in the student number? It should be more than 2 characters long.", title = "Marking Assistant")
+    end
 	end
   
   def marks

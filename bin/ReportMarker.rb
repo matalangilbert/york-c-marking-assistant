@@ -1,7 +1,7 @@
 class ReportMarker
   require 'prawn'
 
-  @@input_filename = "assignment-mark-form.pdf"
+  @@input_filename = "assets/assignment-mark-form.pdf"
    
   def self.input_filename
     @@input_filename
@@ -78,10 +78,10 @@ class ReportMarker
       total_mark = marks[:requirements].inject(:+) + marks[:analysis].inject(:+) + marks[:specification].inject(:+) + marks[:design].inject(:+)
       stamp_at "#{total_mark}_mark", [x, total_mark_position[:y]]
       # Lateness
-      unless marks[:lateness].empty?
-        stamp_at "minus", [x, total_mark_position[:y]-20]
-        stamp_at "#{marks[:lateness]}_mark", [x, total_mark_position[:y]-20]
-      end
+      #unless marks[:lateness].empty?
+        #stamp_at "minus", [x, total_mark_position[:y]-20]
+        #stamp_at "#{marks[:lateness]}_mark", [x, total_mark_position[:y]-20]
+      #end
     
       #Requirements
       stamp_at "#{marks[:requirements][0]}_mark", [x, requirements_position[:y]]
