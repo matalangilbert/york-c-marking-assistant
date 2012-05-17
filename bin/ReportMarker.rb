@@ -16,6 +16,10 @@ class ReportMarker
     marks
   end
   
+  def self.output_filename(student_number)
+    "completed_marksheets/#{student_number}_c_part_one.pdf"
+  end
+  
   def self.generate(marker_name, student_number, marks)
     # check for required information
     if marker_name.nil? || marker_name.empty?
@@ -35,8 +39,6 @@ class ReportMarker
       raise Exception.new "input hash[#{input_error}] has incorrect length"
     end
     
-    output_filename = "completed_marksheets/#{student_number}_c_part_one.pdf"
-    
     x = 385
     total_mark_position = {:y => 660}
     requirements_position = {:y => 582}
@@ -44,7 +46,7 @@ class ReportMarker
     specification_position = {:y => 411}
     design_position = {:y => 342}
       
-    Prawn::Document.generate(output_filename, :template => @@input_filename, :template_page => 1) do
+    Prawn::Document.generate(output_filename(student_number), :template => @@input_filename, :template_page => 1) do
       
       create_stamp("marker_name") do
         draw_text marker_name, :at => [0, 0]
