@@ -197,7 +197,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                   </object>
                 </child>
                 <child type="tab">
-                  <object class="GtkLabel" id="ReportMarkerGUI_r1">
+                  <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="label" translatable="yes">&lt;b&gt;Requirements&lt;/b&gt;</property>
@@ -406,7 +406,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                     <property name="can_focus">False</property>
                     <property name="n_rows">11</property>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton10">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s1">
                         <property name="label" translatable="yes">Is there one?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -416,7 +416,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </object>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton11">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s2">
                         <property name="label" translatable="yes">Does it use analysis to build on requirements?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -430,7 +430,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton12">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s3">
                         <property name="label" translatable="yes">Is it split into mandatory/optional specifications?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -545,9 +545,9 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="n_rows">11</property>
-                    <property name="n_columns">4</property>
+                    <property name="n_columns">5</property>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton13">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d1">
                         <property name="label" translatable="yes">Is there one?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -561,7 +561,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton14">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d2">
                         <property name="label" translatable="yes">Is there a complete user interface design?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -577,7 +577,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton15">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d3">
                         <property name="label" translatable="yes">Does it document expected inputs?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -593,7 +593,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton16">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d4">
                         <property name="label" translatable="yes">Does it document expected outputs?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -609,7 +609,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton17">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5">
                         <property name="label" translatable="yes">Does the design follow a structured approach?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -625,7 +625,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton18">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d6">
                         <property name="label" translatable="yes">Is the structure represented in a diagram?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -641,7 +641,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton19">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d7">
                         <property name="label" translatable="yes">Is the problem broken down into functions?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -657,7 +657,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton20">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8">
                         <property name="label" translatable="yes">Are the functions properly documented (table)?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -673,7 +673,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton21">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9">
                         <property name="label" translatable="yes">Are all variables documented?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -689,7 +689,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton22">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10">
                         <property name="label" translatable="yes">Are all algorithms documented?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -705,7 +705,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton23">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d11">
                         <property name="label" translatable="yes">Are there explanations for all tables/figures?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -721,7 +721,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton24">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d2_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -736,7 +736,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton25">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d3_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -751,7 +751,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton26">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d4_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -766,7 +766,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton27">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -781,7 +781,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton28">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5_3">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -794,7 +794,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton29">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d6_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -809,7 +809,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton30">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d7_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -824,7 +824,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton31">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -839,7 +839,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton32">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8_3">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -852,7 +852,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton33">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -867,7 +867,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton34">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9_3">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -880,7 +880,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton35">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -895,7 +895,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton36">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10_3">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -908,7 +908,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="checkbutton37">
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d11_2">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
@@ -930,8 +930,8 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="use_markup">True</property>
                       </object>
                       <packing>
-                        <property name="left_attach">3</property>
-                        <property name="right_attach">4</property>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
                         <property name="top_attach">7</property>
                         <property name="bottom_attach">8</property>
                       </packing>
@@ -944,11 +944,83 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="use_markup">True</property>
                       </object>
                       <packing>
-                        <property name="left_attach">3</property>
-                        <property name="right_attach">4</property>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
                         <property name="top_attach">8</property>
                         <property name="bottom_attach">9</property>
                       </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                     <child>
                       <object class="GtkLabel" id="label8">
@@ -958,59 +1030,47 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="use_markup">True</property>
                       </object>
                       <packing>
-                        <property name="left_attach">3</property>
-                        <property name="right_attach">4</property>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
                         <property name="top_attach">9</property>
                         <property name="bottom_attach">10</property>
                       </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkVSeparator" id="vseparator1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
+                      <object class="GtkVSeparator" id="vseparator2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
                     </child>
                     <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
+                      <object class="GtkVSeparator" id="vseparator3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
                     </child>
                   </object>
                   <packing>
