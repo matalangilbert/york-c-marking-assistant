@@ -18,7 +18,7 @@
           <object class="GtkLabel" id="label5">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="label" translatable="yes">&lt;big&gt;&lt;big&gt;Introduction to C: Marking Part 1&lt;/big&gt;&lt;/big&gt;
+            <property name="label" translatable="yes">&lt;big&gt;&lt;big&gt;Introduction to C: Marking Assistant&lt;/big&gt;&lt;/big&gt;
 by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
             <property name="use_markup">True</property>
           </object>
@@ -113,141 +113,1055 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
           </packing>
         </child>
         <child>
-          <object class="GtkNotebook" id="notebook1">
+          <object class="GtkNotebook" id="notepad_parts">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="tab_pos">left</property>
             <child>
-              <object class="GtkVBox" id="vbox2">
+              <object class="GtkNotebook" id="notebook_part_one">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
+                <property name="tab_pos">left</property>
                 <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.r1">
-                    <property name="label" translatable="yes">Is there one?</property>
+                  <object class="GtkVBox" id="vbox2">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
+                    <property name="can_focus">False</property>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.r1">
+                        <property name="label" translatable="yes">Is there one?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.r2">
+                        <property name="label" translatable="yes">Are the requirements complete?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLayout" id="layout9">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">10</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label4">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Requirements&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
+                    <property name="tab_fill">False</property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.r2">
-                    <property name="label" translatable="yes">Are the requirements complete?</property>
+                  <object class="GtkTable" id="table3">
                     <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">7</property>
+                    <property name="n_columns">2</property>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a7">
+                        <property name="label" translatable="yes">Analysis of known processes/algorithms?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="xscale">0</property>
+                        <child>
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a6_2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="xscale">0</property>
+                        <child>
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a5_2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a1">
+                        <property name="label" translatable="yes">Is there one?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a2">
+                        <property name="label" translatable="yes">Does it expand on the requirements?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a3">
+                        <property name="label" translatable="yes">Does it treat the problem as a black box?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a4">
+                        <property name="label" translatable="yes">Does it identify the user?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a5">
+                        <property name="label" translatable="yes">Analysis of inputs (units and range)?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.a6">
+                        <property name="label" translatable="yes">Analysis of outputs (units and range)?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkAlignment" id="alignment2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="xalign">1</property>
+                        <property name="xscale">0</property>
+                        <child>
+                          <object class="GtkCheckButton" id="ReportMarkerGUI.a7_2">
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">False</property>
+                            <property name="use_action_appearance">False</property>
+                            <property name="draw_indicator">True</property>
+                          </object>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
                     <property name="position">1</property>
                   </packing>
                 </child>
-                <child>
-                  <object class="GtkLayout" id="layout1">
+                <child type="tab">
+                  <object class="GtkLabel" id="label6">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Analysis&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTable" id="table2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">11</property>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s1">
+                        <property name="label" translatable="yes">Is there one?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s2">
+                        <property name="label" translatable="yes">Does it use analysis to build on requirements?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.s3">
+                        <property name="label" translatable="yes">Is it split into mandatory/optional specifications?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed4">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed5">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed6">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed7">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="fixed8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">10</property>
+                        <property name="bottom_attach">11</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
                     <property name="position">2</property>
                   </packing>
                 </child>
-                <child>
-                  <object class="GtkLayout" id="layout2">
+                <child type="tab">
+                  <object class="GtkLabel" id="label7">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Specification&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkTable" id="table1">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">11</property>
+                    <property name="n_columns">5</property>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d1">
+                        <property name="label" translatable="yes">Is there one?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d2">
+                        <property name="label" translatable="yes">Is there a complete user interface design?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d3">
+                        <property name="label" translatable="yes">Does it document expected inputs?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d4">
+                        <property name="label" translatable="yes">Does it document expected outputs?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5">
+                        <property name="label" translatable="yes">Does the design follow a structured approach?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d6">
+                        <property name="label" translatable="yes">Is the structure represented in a diagram?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d7">
+                        <property name="label" translatable="yes">Is the problem broken down into functions?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8">
+                        <property name="label" translatable="yes">Are the functions properly documented (table)?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9">
+                        <property name="label" translatable="yes">Are all variables documented?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10">
+                        <property name="label" translatable="yes">Are all algorithms documented?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d11">
+                        <property name="label" translatable="yes">Are there explanations for all tables/figures?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">2</property>
+                        <property name="right_attach">3</property>
+                        <property name="top_attach">10</property>
+                        <property name="bottom_attach">11</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d2_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">1</property>
+                        <property name="bottom_attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d3_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">2</property>
+                        <property name="bottom_attach">3</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d4_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">3</property>
+                        <property name="bottom_attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d5_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">4</property>
+                        <property name="bottom_attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d6_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">5</property>
+                        <property name="bottom_attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d7_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">6</property>
+                        <property name="bottom_attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d8_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d9_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d10_3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="ReportMarkerGUI.d11_2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">1</property>
+                        <property name="right_attach">2</property>
+                        <property name="top_attach">10</property>
+                        <property name="bottom_attach">11</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label8">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">&lt;i&gt;Input/output parameters with types&lt;/i&gt;</property>
+                        <property name="use_markup">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label11">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">&lt;i&gt;Expected value ranges and types&lt;/i&gt;</property>
+                        <property name="use_markup">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label12">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">&lt;i&gt;Pseudo-code, flowchart or similar&lt;/i&gt;</property>
+                        <property name="use_markup">True</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">4</property>
+                        <property name="right_attach">5</property>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkVSeparator" id="vseparator1">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">7</property>
+                        <property name="bottom_attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkVSeparator" id="vseparator2">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">8</property>
+                        <property name="bottom_attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkVSeparator" id="vseparator3">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="left_attach">3</property>
+                        <property name="right_attach">4</property>
+                        <property name="top_attach">9</property>
+                        <property name="bottom_attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
                     <property name="position">3</property>
                   </packing>
                 </child>
-                <child>
-                  <object class="GtkLayout" id="layout3">
+                <child type="tab">
+                  <object class="GtkLabel" id="label13">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Design&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout4">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout5">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout6">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">7</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout7">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout8">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLayout" id="layout9">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">10</property>
+                    <property name="position">3</property>
+                    <property name="tab_fill">False</property>
                   </packing>
                 </child>
               </object>
@@ -256,7 +1170,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
               <object class="GtkLabel" id="label1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;b&gt;Requirements&lt;/b&gt;</property>
+                <property name="label" translatable="yes">&lt;b&gt;Part One&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
               </object>
               <packing>
@@ -264,195 +1178,256 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
               </packing>
             </child>
             <child>
-              <object class="GtkTable" id="table3">
+              <object class="GtkNotebook" id="notebook_part_two">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="n_rows">7</property>
-                <property name="n_columns">2</property>
+                <property name="can_focus">True</property>
+                <property name="tab_pos">left</property>
                 <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a7">
-                    <property name="label" translatable="yes">Analysis of known processes/algorithms?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkAlignment" id="alignment3">
+                  <object class="GtkVBox" id="vbox3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
-                    <property name="xscale">0</property>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a6_2">
+                      <object class="GtkCheckButton" id="checkbutton_i1">
+                        <property name="label" translatable="yes">Is there one?</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">False</property>
+                        <property name="use_action_appearance">False</property>
+                        <property name="xalign">0.50999999046325684</property>
+                        <property name="draw_indicator">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkCheckButton" id="checkbutton_i2">
+                        <property name="label" translatable="yes">Does it document the program (file) structure?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="use_action_appearance">False</property>
                         <property name="draw_indicator">True</property>
                       </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
                     </child>
-                  </object>
-                  <packing>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkAlignment" id="alignment4">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
-                    <property name="xscale">0</property>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a5_2">
+                      <object class="GtkCheckButton" id="checkbutton_i3">
+                        <property name="label" translatable="yes">Does it document (and justify) design changes?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="receives_default">False</property>
                         <property name="use_action_appearance">False</property>
                         <property name="draw_indicator">True</property>
                       </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                   </object>
-                  <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
                 </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a1">
-                    <property name="label" translatable="yes">Is there one?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a2">
-                    <property name="label" translatable="yes">Does it expand on the requirements?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a3">
-                    <property name="label" translatable="yes">Does it treat the problem as a black box?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a4">
-                    <property name="label" translatable="yes">Does it identify the user?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a5">
-                    <property name="label" translatable="yes">Analysis of inputs (units and range)?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.a6">
-                    <property name="label" translatable="yes">Analysis of outputs (units and range)?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkAlignment" id="alignment2">
+                <child type="tab">
+                  <object class="GtkLabel" id="label3">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="xalign">1</property>
-                    <property name="xscale">0</property>
-                    <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a7_2">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="use_action_appearance">False</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                    </child>
+                    <property name="label" translatable="yes">&lt;b&gt;Implementation Report&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
                   </object>
                   <packing>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
+                    <property name="tab_fill">False</property>
                   </packing>
                 </child>
                 <child>
-                  <placeholder/>
+                  <object class="GtkTable" id="table6">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">2</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label14">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Code Listing&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">1</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
                 </child>
                 <child>
-                  <placeholder/>
+                  <object class="GtkTable" id="table7">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">2</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label15">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Testing and Verification&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">2</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
                 </child>
                 <child>
-                  <placeholder/>
+                  <object class="GtkTable" id="table8">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">2</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label16">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;User Manual&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="position">3</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
                 </child>
                 <child>
-                  <placeholder/>
+                  <object class="GtkTable" id="table9">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="n_rows">3</property>
+                    <property name="n_columns">2</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child type="tab">
+                  <object class="GtkLabel" id="label17">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Maturity, Consistency,
+Presentation and Innovation&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="justify">center</property>
+                  </object>
+                  <packing>
+                    <property name="position">4</property>
+                    <property name="tab_fill">False</property>
+                  </packing>
                 </child>
               </object>
               <packing>
@@ -463,700 +1438,11 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
               <object class="GtkLabel" id="label2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;b&gt;Analysis&lt;/b&gt;</property>
+                <property name="label" translatable="yes">&lt;b&gt;Part Two&lt;/b&gt;</property>
                 <property name="use_markup">True</property>
               </object>
               <packing>
                 <property name="position">1</property>
-                <property name="tab_fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkTable" id="table2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="n_rows">11</property>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.s1">
-                    <property name="label" translatable="yes">Is there one?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.s2">
-                    <property name="label" translatable="yes">Does it use analysis to build on requirements?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.s3">
-                    <property name="label" translatable="yes">Is it split into mandatory/optional specifications?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed1">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed4">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed5">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed6">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed7">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkFixed" id="fixed8">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">10</property>
-                    <property name="bottom_attach">11</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="position">2</property>
-              </packing>
-            </child>
-            <child type="tab">
-              <object class="GtkLabel" id="label3">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;b&gt;Specification&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
-              </object>
-              <packing>
-                <property name="position">2</property>
-                <property name="tab_fill">False</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkTable" id="table1">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="n_rows">11</property>
-                <property name="n_columns">5</property>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d1">
-                    <property name="label" translatable="yes">Is there one?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d2">
-                    <property name="label" translatable="yes">Is there a complete user interface design?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d3">
-                    <property name="label" translatable="yes">Does it document expected inputs?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d4">
-                    <property name="label" translatable="yes">Does it document expected outputs?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d5">
-                    <property name="label" translatable="yes">Does the design follow a structured approach?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d6">
-                    <property name="label" translatable="yes">Is the structure represented in a diagram?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d7">
-                    <property name="label" translatable="yes">Is the problem broken down into functions?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d8">
-                    <property name="label" translatable="yes">Are the functions properly documented (table)?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d9">
-                    <property name="label" translatable="yes">Are all variables documented?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d10">
-                    <property name="label" translatable="yes">Are all algorithms documented?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d11">
-                    <property name="label" translatable="yes">Are there explanations for all tables/figures?</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">10</property>
-                    <property name="bottom_attach">11</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d2_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d3_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d4_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d5_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d5_3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d6_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d7_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d8_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d8_3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d9_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d9_3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d10_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d10_3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkCheckButton" id="ReportMarkerGUI.d11_2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_action_appearance">False</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">10</property>
-                    <property name="bottom_attach">11</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label6">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">&lt;i&gt;Input/output parameters with types&lt;/i&gt;</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">4</property>
-                    <property name="right_attach">5</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label7">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">&lt;i&gt;Expected value ranges and types&lt;/i&gt;</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">4</property>
-                    <property name="right_attach">5</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label8">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">&lt;i&gt;Pseudo-code, flowchart or similar&lt;/i&gt;</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">4</property>
-                    <property name="right_attach">5</property>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkVSeparator" id="vseparator1">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">3</property>
-                    <property name="right_attach">4</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkVSeparator" id="vseparator2">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">3</property>
-                    <property name="right_attach">4</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkVSeparator" id="vseparator3">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">3</property>
-                    <property name="right_attach">4</property>
-                    <property name="top_attach">9</property>
-                    <property name="bottom_attach">10</property>
-                  </packing>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-                <child>
-                  <placeholder/>
-                </child>
-              </object>
-              <packing>
-                <property name="position">3</property>
-              </packing>
-            </child>
-            <child type="tab">
-              <object class="GtkLabel" id="label4">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;b&gt;Design&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
-              </object>
-              <packing>
-                <property name="position">3</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>

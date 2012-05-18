@@ -1,14 +1,20 @@
 class ReportMarker
   require 'prawn'
 
-  @@marking_form_filename = "assets/assignment-mark-form.pdf"
-   
-  def self.input_filename
-    @@marking_form_filename
+  def self.marking_form_input_filename
+    "assets/assignment-mark-form.pdf"
   end
   
-  def self.output_filename(student_number)
-    "completed_marksheets/#{student_number}_c_part_one.pdf"
+  def self.summary_input_filename
+    "assets/summary-mark-form.pdf"
+  end
+  
+  def self.marking_form_output_filename(student_number)
+    "completed_marksheets/#{student_number}_assignment-mark-form.pdf"
+  end
+  
+  def self.summary_output_filename(student_number)
+    "completed_marksheets/#{student_number}_summary.pdf"
   end
   
   def self.generate_part_one(marker_name, student_number, marks)
@@ -37,7 +43,7 @@ class ReportMarker
     specification_position = {:y => 411}
     design_position = {:y => 342}
       
-    Prawn::Document.generate(output_filename(student_number), :template => @@marking_form_filename, :template_page => 1) do
+    Prawn::Document.generate(marking_form_output_filename(student_number), :template => marking_form_input_filename, :template_page => 1) do
       
       create_stamp("marker_name") do
         draw_text marker_name, :at => [0, 0]
@@ -111,6 +117,56 @@ class ReportMarker
       stamp_at "#{marks[:design][9]}_mark", [x, design_position[:y]-114]
       stamp_at "#{marks[:design][10]}_mark", [x, design_position[:y]-134]
       stamp_at "#{marks[:design].inject(:+)}_mark", [x, design_position[:y]-155]
+    end
+    
+    part_one_details = {:marker_name => marker_name,
+      :student_number => student_number,
+      :requirements => marks[:requirements].inject(:+),
+      :analysis => marks[:analysis].inject(:+),
+      :specification => marks[:specification].inject(:+)
+    }
+    generate_summary_part_one(part_one_details)
+  end
+  
+  def self.test_details
+    details = { :marker_name => "Mat",
+      :student_number => "Y99",
+      :requirements => 3,
+      :analysis => 5,
+      :specification => 10,
+      :design => 10
+    }
+  end
+  
+  def self.generate_summary_part_one(details)
+    Prawn::Document.generate(summary_output_filename(details[:student_number]), :template => summary_input_filename) do
+      create_stamp("marker_name") do
+        draw_text details[:marker_name], :at => [0, 0]
+      end
+      
+      create_stamp("student_number") do
+        draw_text details[:student_number], :at => [0, 0]
+      end
+      
+      0.upto(100) do |stamp_number|
+        create_stamp("#{stamp_number}_mark") do
+          draw_text stamp_number.to_s, :at => [0, 0]
+        end
+      end
+      
+      stamp_at("student_number", [235,652])
+      stamp_at("marker_name", [90,627])
+      
+      totals_x_position = 380
+      # Requirements, Analysis and Specification
+      ras = details[:requirements] +
+      details[:analysis] +
+      details[:specification]
+      stamp_at("#{ras}_mark", [totals_x_position,557])
+      
+      # Design
+      stamp_at("#{details[:design]}_mark",
+        [totals_x_position, 540])
     end
   end
 end

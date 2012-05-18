@@ -23,12 +23,19 @@ class ReportMarkerGUI < ReportMarker
   
 	def buttonSave__clicked(button)
 		get_glade_all() # get values of controls
-    
+  
     if all_details_present?
-      if File.exists?(ReportMarker.output_filename(@student_number))
-        if VR::Dialog.ok_box("You've already completed a marksheet for this student, continuing will overwrite it.", title = "Marking Assistant")
+      case @builder["notepad_parts"].page
+      when 0
+        if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
+          if VR::Dialog.ok_box("You've already completed part one for this student, continuing will overwrite it.", title = "Marking Assistant")
+            ReportMarker.generate_part_one(@marker_name, @student_number, marks)
+          end
+        else
           ReportMarker.generate_part_one(@marker_name, @student_number, marks)
         end
+      when 1
+        p "Not yet implemented"
       end
     end
 	end
