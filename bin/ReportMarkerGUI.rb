@@ -30,24 +30,104 @@ class ReportMarkerGUI < ReportMarker
       when 0
         if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
           if VR::Dialog.ok_box("You've already completed part one for this student, continuing will overwrite it.", title = "Marking Assistant")
-            ReportMarker.generate_part_one(@marker_name, @student_number, marks)
+            ReportMarker.generate_part_one(@marker_name, @student_number, part_one_marks)
           end
         else
-          ReportMarker.generate_part_one(@marker_name, @student_number, marks)
+          ReportMarker.generate_part_one(@marker_name, @student_number, part_one_marks)
         end
       when 1
-        p "Not yet implemented"
+p        testing_and_verification_checkboxes
+=begin
+if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
+          if VR::Dialog.ok_box("You've already completed some of the marking for this student, continuing will overwrite part two.", title = "Marking Assistant")
+            #ReportMarker.generate_part_two(part_two_details)
+          end
+        else
+          #ReportMarker.generate_part_two(part_two_details)
+        end
+=end
       end
     end
 	end
   
-  def marks
+  def part_one_marks
     marks = {:requirements => requirements_totalled,
       :analysis => analysis_totalled,
       :specification => specification_totalled,
       :design => design_totalled,
     }
   end
+  
+  def part_two_details
+    details = {:implementation => implementation_totalled,
+      :code_listing => coding_listing_totalled,
+      :testing_and_verification => testing_and_verification_totalled,
+      :user_manual => user_manual_totalled,
+      :mcpi => mcpi_totalled,
+      #:input_filename => ,
+      #:output_filename =>
+    }
+  end
+  
+  def implementation_checkboxes
+    implementation = Array.new
+    1.upto(3) do |checkbox_number|
+      if @builder["checkbutton_i#{checkbox_number}"].active?
+        implementation << 1
+      else
+        implementation << 0
+      end
+    end
+    implementation
+  end
+  
+  def code_listing_checkboxes
+    code_listing = Array.new
+    1.upto(11) do |checkbox_number|
+      if @builder["checkbutton_cl#{checkbox_number}"].active?
+        code_listing << 1
+      else
+        code_listing << 0
+      end
+    end
+    
+    1.upto(11) do |checkbox_number|
+      unless @builder["checkbutton_cl#{checkbox_number}_2"].nil?
+        if @builder["checkbutton_cl#{checkbox_number}_2"].active?
+          code_listing[checkbox_number-1] += 1
+        end
+      end
+      unless @builder["checkbutton_cl#{checkbox_number}_3"].nil?
+        if @builder["checkbutton_cl#{checkbox_number}_3"].active?
+          code_listing[checkbox_number-1] += 1
+        end
+      end
+    end
+    code_listing
+  end
+  
+  def testing_and_verification_checkboxes
+    testing_and_verification = Array.new
+    1.upto(5) do |checkbox_number|
+      if @builder["checkbutton_tv#{checkbox_number}"].active?
+        testing_and_verification << 1
+      else
+        testing_and_verification << 0
+      end
+    end
+    testing_and_verification
+  end
+  
+  def user_manual_totalled
+    1
+  end
+  
+  def mcpi_totalled
+    1
+  end
+  
+  
+  
   
   def show_validation_problems
     if @marker_name.empty?

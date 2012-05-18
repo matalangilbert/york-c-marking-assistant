@@ -12,11 +12,11 @@ class ReportMarker
   def self.marking_form_output_filename(student_number)
     "completed_marksheets/#{student_number}_assignment-mark-form.pdf"
   end
-  
+
   def self.summary_output_filename(student_number)
     "completed_marksheets/#{student_number}_summary.pdf"
   end
-  
+ 
   def self.generate_part_one(marker_name, student_number, marks)
     # check for required information
     if marker_name.nil? || marker_name.empty?
@@ -118,7 +118,7 @@ class ReportMarker
       stamp_at "#{marks[:design][10]}_mark", [x, design_position[:y]-134]
       stamp_at "#{marks[:design].inject(:+)}_mark", [x, design_position[:y]-155]
     end
-    
+
     part_one_details = {:marker_name => marker_name,
       :student_number => student_number,
       :requirements => marks[:requirements].inject(:+),
@@ -126,16 +126,122 @@ class ReportMarker
       :specification => marks[:specification].inject(:+)
     }
     generate_summary_part_one(part_one_details)
+  
   end
   
-  def self.test_details
+  def self.test_generate_summary_part_one(details)
     details = { :marker_name => "Mat",
       :student_number => "Y99",
       :requirements => 3,
       :analysis => 5,
       :specification => 10,
-      :design => 10
+      :design => 10,
+      :input_filename => marking_form_input_filename
     }
+  end
+
+  def self.test_generate_part_two_details
+    details = { :implementation => [1,1,1],
+      :code_listing => [1,1,1,1,1,1,1,1,1,1,0],
+      :testing_and_verification => [1,1,1,1,1],
+      :user_manual => [1,1,1,1,1,1,1],
+      :mcpi => [1,1,1,1,1],
+      :input_filename => marking_form_input_filename,
+      :output_filename => "completed_marksheets/test.pdf"
+    }
+  end
+
+  def self.generate_part_two(details)
+    x = 385
+    
+    Prawn::Document.generate(details[:output_filename],
+      :template => details[:input_filename]) do
+      
+      go_to_page(2)
+        
+      0.upto(100) do |stamp_number|
+        create_stamp("#{stamp_number}_mark") do
+          draw_text stamp_number.to_s, :at => [0, 0]
+        end
+      end
+      
+      create_stamp("minus") do
+        draw_text "-", :at => [-5, 0]
+      end
+      
+      # Implementation Report
+      stamp_at("#{details[:implementation][0]}_mark", [x, 648])
+      stamp_at("#{details[:implementation][1]}_mark", [x, 638])
+      stamp_at("#{details[:implementation][2]}_mark", [x, 627])
+      stamp_at("#{details[:implementation].inject(:+)}_mark", [x, 611])
+
+      # Code Listing
+      code_listing_y = 578
+      stamp_at("#{details[:code_listing][0]}_mark", [x, code_listing_y])
+      stamp_at("#{details[:code_listing][1]}_mark", [x, code_listing_y-10])
+      stamp_at("#{details[:code_listing][2]}_mark", [x, code_listing_y-20])
+      stamp_at("#{details[:code_listing][3]}_mark", [x, code_listing_y-31])
+      stamp_at("#{details[:code_listing][4]}_mark", [x, code_listing_y-41])
+      stamp_at("#{details[:code_listing][5]}_mark", [x, code_listing_y-51])
+      stamp_at("#{details[:code_listing][6]}_mark", [x, code_listing_y-62])
+      stamp_at("#{details[:code_listing][7]}_mark", [x, code_listing_y-72])
+      stamp_at("#{details[:code_listing][8]}_mark", [x, code_listing_y-82])
+
+      stamp_at("minus", [x, code_listing_y-98]) unless details[:code_listing][9] == 0
+      stamp_at("#{details[:code_listing][9]}_mark", [x, code_listing_y-98])
+      
+      stamp_at("minus", [x, code_listing_y-109]) unless details[:code_listing][10] == 0
+      stamp_at("#{details[:code_listing][10]}_mark", [x, code_listing_y-109])
+      
+      
+      code_listing_total_marks = 0
+      0.upto(8) do |i|
+        code_listing_total_marks += details[:code_listing][i]
+      end
+      9.upto(10) do |i|
+        code_listing_total_marks -= details[:code_listing][i]
+      end
+      
+      stamp_at("#{code_listing_total_marks}_mark", [x, code_listing_y-125])
+      
+      # Testing and Verification
+      testing_verification_y = 420
+      stamp_at("#{details[:testing_and_verification][0]}_mark", [x, testing_verification_y])
+      stamp_at("#{details[:testing_and_verification][1]}_mark", [x, testing_verification_y-10])
+      stamp_at("#{details[:testing_and_verification][2]}_mark", [x, testing_verification_y-21])
+      stamp_at("#{details[:testing_and_verification][3]}_mark", [x, testing_verification_y-31])
+      stamp_at("#{details[:testing_and_verification][4]}_mark", [x, testing_verification_y-42])
+      stamp_at("#{details[:testing_and_verification].inject(:+)}_mark", [x, testing_verification_y-58])
+      
+      # User Manual
+      user_manual_y = 330
+      stamp_at("#{details[:user_manual][0]}_mark", [x, user_manual_y])
+      stamp_at("#{details[:user_manual][1]}_mark", [x, user_manual_y-10])
+      stamp_at("#{details[:user_manual][2]}_mark", [x, user_manual_y-21])
+      stamp_at("#{details[:user_manual][3]}_mark", [x, user_manual_y-31])
+      stamp_at("#{details[:user_manual][4]}_mark", [x, user_manual_y-41])
+      stamp_at("#{details[:user_manual][5]}_mark", [x, user_manual_y-52])
+      stamp_at("#{details[:user_manual][6]}_mark", [x, user_manual_y-62])
+      stamp_at("#{details[:user_manual].inject(:+)}_mark", [x, user_manual_y-79])
+      
+      # Maturity, Consistency, Presentation and Innovation
+      mcpi_y = 219
+      stamp_at("#{details[:mcpi][0]}_mark", [x, mcpi_y])
+      stamp_at("#{details[:mcpi][1]}_mark", [x, mcpi_y-11])
+      stamp_at("#{details[:mcpi][2]}_mark", [x, mcpi_y-21])
+      stamp_at("#{details[:mcpi][3]}_mark", [x, mcpi_y-31])
+      
+      stamp_at("minus", [x, mcpi_y-61]) unless details[:mcpi][4] == 0
+      stamp_at("#{details[:mcpi][4]}_mark", [x, mcpi_y-61])
+      
+      mcpi_total_marks = 0
+      0.upto(3) do |i|
+        mcpi_total_marks += details[:mcpi][i]
+      end
+      mcpi_total_marks -= details[:mcpi][4]
+      stamp_at("#{mcpi_total_marks}_mark", [x, mcpi_y-81])
+        
+    end # Prawn::Document.generate
   end
   
   def self.generate_summary_part_one(details)
@@ -147,10 +253,10 @@ class ReportMarker
       create_stamp("student_number") do
         draw_text details[:student_number], :at => [0, 0]
       end
-      
+    
       0.upto(100) do |stamp_number|
-        create_stamp("#{stamp_number}_mark") do
-          draw_text stamp_number.to_s, :at => [0, 0]
+      create_stamp("#{stamp_number}_mark") do
+        draw_text stamp_number.to_s, :at => [0, 0]
         end
       end
       
@@ -169,5 +275,6 @@ class ReportMarker
         [totals_x_position, 540])
     end
   end
+
 end
 
