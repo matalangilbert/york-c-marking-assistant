@@ -28,48 +28,103 @@ class ReportMarkerGUI < ReportMarker
     if all_details_present?
       case @builder["notepad_parts"].page
       when 0
-        if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
+        if File.exists?(ReportMarker.marking_form_output_filename_part_one(@student_number))
           if VR::Dialog.ok_box("You've already completed part one for this student, continuing will overwrite it.", title = "Marking Assistant")
-            ReportMarker.generate_part_one(@marker_name, @student_number, part_one_marks)
+            save_part_one
+            if File.exists?(ReportMarker.marking_form_output_filename_part_two(@student_number))
+              save_summary(1)
+            end
           end
         else
-          ReportMarker.generate_part_one(@marker_name, @student_number, part_one_marks)
+          save_part_one
         end
       when 1
-p        testing_and_verification_checkboxes
-=begin
-if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
-          if VR::Dialog.ok_box("You've already completed some of the marking for this student, continuing will overwrite part two.", title = "Marking Assistant")
-            #ReportMarker.generate_part_two(part_two_details)
+        if File.exists?(ReportMarker.marking_form_output_filename_part_two(@student_number))
+          if VR::Dialog.ok_box("You've already completed part two for this student, continuing will overwrite it.", title = "Marking Assistant")
+            save_part_two
+            if File.exists?(ReportMarker.marking_form_output_filename_part_one(@student_number))
+            save_summary(2)
+            end
           end
         else
-          #ReportMarker.generate_part_two(part_two_details)
+          save_part_two
         end
-=end
       end
     end
 	end
   
+  def save_summary(part)
+    case part
+    when 1
+      details = part_one_details
+      details[:input_filename] = ReportMarker.marking_form_output_filename_part_two(@student_number)
+      details[:output_filename] = ReportMarker.marking_form_output_filename(@student_number)
+      p details.inspect
+      ReportMarker.generate_part_one(details)
+    when 2
+      details = part_two_details
+      details[:input_filename] = ReportMarker.marking_form_output_filename_part_one(@student_number)
+      details[:output_filename] = ReportMarker.marking_form_output_filename(@student_number)
+      ReportMarker.generate_part_two(details)
+    end
+    VR::Dialog.messagebox("Part I and Part II marking completed! Finalised marksheets in: #{Dir.pwd}/#{ReportMarker.output_directory}")
+  end
+  
+  def save_part_two
+    details = part_two_details
+    ReportMarker.generate_part_two(details)
+    details[:input_filename] = ReportMarker.summary_input_filename
+    details[:output_filename] = ReportMarker.summary_output_filename_part_two(part_one_details[:student_number])
+    ReportMarker.generate_summary_part_two(details)
+  end
+  
+  def part_two_details
+    details = { :marker_name => @marker_name,
+        :student_number => @student_number,
+        :implementation => implementation_totalled,
+        :code_listing => code_listing_totalled,
+        :testing_and_verification => testing_and_verification_totalled,
+        :user_manual => user_manual_totalled,
+        :mcpi => mcpi_totalled,
+        :input_filename => ReportMarker.marking_form_input_filename,
+        :output_filename => ReportMarker.marking_form_output_filename_part_two(@student_number)
+      }
+  end
+  
+  def save_part_one
+    details = part_one_details
+    
+    ReportMarker.generate_part_one(details)
+    
+    details[:input_filename] = ReportMarker.summary_input_filename
+    details[:output_filename] = ReportMarker.summary_output_filename_part_one(part_one_details[:student_number])
+
+    ReportMarker.generate_summary_part_one(details)
+  end
+  
+  def part_one_details
+    marks = part_one_marks
+    details = {
+      :marker_name => @marker_name,
+      :student_number => @student_number,
+      :requirements => marks[:requirements],
+      :analysis => marks[:analysis],
+      :specification => marks[:specification],
+      :design => marks[:design],
+      :input_filename => ReportMarker.marking_form_input_filename,
+      :output_filename => ReportMarker.marking_form_output_filename_part_one(@student_number)
+    }
+  end
+  
   def part_one_marks
-    marks = {:requirements => requirements_totalled,
+    marks = { :requirements => requirements_totalled,
       :analysis => analysis_totalled,
       :specification => specification_totalled,
       :design => design_totalled,
     }
   end
   
-  def part_two_details
-    details = {:implementation => implementation_totalled,
-      :code_listing => coding_listing_totalled,
-      :testing_and_verification => testing_and_verification_totalled,
-      :user_manual => user_manual_totalled,
-      :mcpi => mcpi_totalled,
-      #:input_filename => ,
-      #:output_filename =>
-    }
-  end
-  
-  def implementation_checkboxes
+  def implementation_totalled
     implementation = Array.new
     1.upto(3) do |checkbox_number|
       if @builder["checkbutton_i#{checkbox_number}"].active?
@@ -81,7 +136,7 @@ if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
     implementation
   end
   
-  def code_listing_checkboxes
+  def code_listing_totalled
     code_listing = Array.new
     1.upto(11) do |checkbox_number|
       if @builder["checkbutton_cl#{checkbox_number}"].active?
@@ -91,22 +146,19 @@ if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
       end
     end
     
-    1.upto(11) do |checkbox_number|
-      unless @builder["checkbutton_cl#{checkbox_number}_2"].nil?
-        if @builder["checkbutton_cl#{checkbox_number}_2"].active?
-          code_listing[checkbox_number-1] += 1
-        end
-      end
-      unless @builder["checkbutton_cl#{checkbox_number}_3"].nil?
-        if @builder["checkbutton_cl#{checkbox_number}_3"].active?
-          code_listing[checkbox_number-1] += 1
+    1.upto(11) do |question_number|
+      1.upto(11) do |additional_mark|
+        unless @builder["checkbutton_cl#{question_number}_#{additional_mark}"].nil?
+          if @builder["checkbutton_cl#{question_number}_#{additional_mark}"].active?
+            code_listing[question_number-1] += 1
+          end
         end
       end
     end
     code_listing
   end
   
-  def testing_and_verification_checkboxes
+  def testing_and_verification_totalled
     testing_and_verification = Array.new
     1.upto(5) do |checkbox_number|
       if @builder["checkbutton_tv#{checkbox_number}"].active?
@@ -119,11 +171,37 @@ if File.exists?(ReportMarker.marking_form_output_filename(@student_number))
   end
   
   def user_manual_totalled
-    1
+    user_manual = Array.new
+    1.upto(7) do |checkbox_number|
+      if @builder["checkbutton_ui#{checkbox_number}"].active?
+        user_manual << 1
+      else
+        user_manual << 0
+      end
+    end
+    user_manual
   end
   
   def mcpi_totalled
-    1
+        mcpi = Array.new
+    1.upto(5) do |checkbox_number|
+      if @builder["checkbutton_mcpi#{checkbox_number}"].active?
+        mcpi << 1
+      else
+        mcpi << 0
+      end
+    end
+    
+    1.upto(5) do |question_number|
+      1.upto(5) do |additional_mark|
+        unless @builder["checkbutton_mcpi#{question_number}_#{additional_mark}"].nil?
+          if @builder["checkbutton_mcpi#{question_number}_#{additional_mark}"].active?
+            mcpi[question_number-1] += 1
+          end
+        end
+      end
+    end
+    mcpi
   end
   
   
