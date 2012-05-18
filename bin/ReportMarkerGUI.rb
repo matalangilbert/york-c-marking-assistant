@@ -24,16 +24,13 @@ class ReportMarkerGUI < ReportMarker
   
 	def buttonSave__clicked(button)
 		get_glade_all() # get values of controls
-  
+
     if all_details_present?
       case @builder["notepad_parts"].page
       when 0
         if File.exists?(ReportMarker.marking_form_output_filename_part_one(@student_number))
           if VR::Dialog.ok_box("You've already completed part one for this student, continuing will overwrite it.", title = "Marking Assistant")
             save_part_one
-            if File.exists?(ReportMarker.marking_form_output_filename_part_two(@student_number))
-              save_summary(1)
-            end
           end
         else
           save_part_one
@@ -42,33 +39,17 @@ class ReportMarkerGUI < ReportMarker
         if File.exists?(ReportMarker.marking_form_output_filename_part_two(@student_number))
           if VR::Dialog.ok_box("You've already completed part two for this student, continuing will overwrite it.", title = "Marking Assistant")
             save_part_two
-            if File.exists?(ReportMarker.marking_form_output_filename_part_one(@student_number))
-            save_summary(2)
-            end
           end
         else
           save_part_two
         end
       end
+      if File.exists?("data/#{@student_number}_part1.json") && File.exists?("data/#{@student_number}_part2.json")
+        ReportMarker.generate_complete(@student_number)
+        VR::Dialog.message_box("Completed marksheets saved to: #{Dir.pwd}/#{ReportMarker.output_directory}", title = "Marking Assistant")
+      end
     end
 	end
-  
-  def save_summary(part)
-    case part
-    when 1
-      details = part_one_details
-      details[:input_filename] = ReportMarker.marking_form_output_filename_part_two(@student_number)
-      details[:output_filename] = ReportMarker.marking_form_output_filename(@student_number)
-      p details.inspect
-      ReportMarker.generate_part_one(details)
-    when 2
-      details = part_two_details
-      details[:input_filename] = ReportMarker.marking_form_output_filename_part_one(@student_number)
-      details[:output_filename] = ReportMarker.marking_form_output_filename(@student_number)
-      ReportMarker.generate_part_two(details)
-    end
-    VR::Dialog.messagebox("Part I and Part II marking completed! Finalised marksheets in: #{Dir.pwd}/#{ReportMarker.output_directory}")
-  end
   
   def save_part_two
     details = part_two_details
@@ -203,10 +184,7 @@ class ReportMarkerGUI < ReportMarker
     end
     mcpi
   end
-  
-  
-  
-  
+   
   def show_validation_problems
     if @marker_name.empty?
       VR::Dialog.message_box("You forgot to fill in your name! Please put it in the box at the top.", title = "Marking Assistant")
