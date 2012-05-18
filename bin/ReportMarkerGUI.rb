@@ -17,7 +17,8 @@ class ReportMarkerGUI < ReportMarker
 
 	def show()
 		load_glade(__FILE__)  #loads file, glade/ReportMarkerGUI.glade into @builder
-		set_glade_all(self) #populates glade controls with insance variables (i.e. Myclass.var1)
+		set_glade_all(self) #populates glade controls with instance variables (i.e. Myclass.var1)
+    
 		show_window()
 	end
   
