@@ -24,6 +24,11 @@ class ReportMarkerGUI < ReportMarker
   
 	def buttonSave__clicked(button)
 		get_glade_all() # get values of controls
+    
+    if ReportMarker.output_directory.nil?
+      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.")
+      p ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
+    end
 
     if all_details_present?
       case @builder["notepad_parts"].page
@@ -46,7 +51,7 @@ class ReportMarkerGUI < ReportMarker
       end
       if File.exists?("data/#{@student_number}_part1.json") && File.exists?("data/#{@student_number}_part2.json")
         ReportMarker.generate_complete(@student_number)
-        VR::Dialog.message_box("Completed marksheets saved to: #{Dir.pwd}/#{ReportMarker.output_directory}", title = "Marking Assistant")
+        VR::Dialog.message_box("Completed marksheets saved to: #{ReportMarker.output_directory}", title = "Marking Assistant")
       end
     end
 	end

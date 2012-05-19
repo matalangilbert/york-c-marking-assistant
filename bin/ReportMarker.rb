@@ -2,6 +2,8 @@ class ReportMarker
   require 'prawn'
   require 'json'
 
+  
+  
   def self.marking_form_input_filename
     "assets/assignment-mark-form.pdf"
   end
@@ -11,22 +13,38 @@ class ReportMarker
   end
   
   def self.output_directory
-    "completed_marksheets"
+    @output_directory
+  end
+  
+  def self.output_directory=(value)
+    @output_directory = value
   end
    
   def self.marking_form_output_filename_part_one(student_number)
+    unless File.directory?("#{output_directory}/part_1")
+      Dir.mkdir("#{output_directory}/part_1")
+    end
     "#{output_directory}/part_1/#{student_number}_assignment-mark-form_part_1.pdf"
   end
 
   def self.summary_output_filename_part_one(student_number)
+    unless File.directory?("#{output_directory}/part_1")
+      Dir.mkdir("#{output_directory}/part_1")
+    end
     "#{output_directory}/part_1/#{student_number}_summary_part_1.pdf"
   end
   
   def self.marking_form_output_filename_part_two(student_number)
+    unless File.directory?("#{output_directory}/part_2")
+      Dir.mkdir("#{output_directory}/part_2")
+    end
     "#{output_directory}/part_2/#{student_number}_assignment-mark-form_part_2.pdf"
   end
 
   def self.summary_output_filename_part_two(student_number)
+    unless File.directory?("#{output_directory}/part_2")
+      Dir.mkdir("#{output_directory}/part_2")
+    end
     "#{output_directory}/part_2/#{student_number}_summary_part_2.pdf"
   end
   
@@ -311,7 +329,7 @@ class ReportMarker
         summary_details[:specification]
       stamp_at("#{ras}_mark", [totals_x_position,557])
       
-      p summary_details[:design]
+      summary_details[:design]
       # Design
       stamp_at("#{summary_details[:design]}_mark",
         [totals_x_position, 540])
@@ -678,7 +696,7 @@ class ReportMarker
         summary_details[:specification]
       stamp_at("#{ras}_mark", [totals_x_position,557])
       
-      p summary_details[:design]
+      summary_details[:design]
       # Design
       stamp_at("#{summary_details[:design]}_mark",
         [totals_x_position, 540])
