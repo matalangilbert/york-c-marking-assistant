@@ -27,7 +27,7 @@ class ReportMarkerGUI < ReportMarker
     
     if ReportMarker.output_directory.nil?
       VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.", title = "Marking Assistant")
-      p ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
+      ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
     end
 
     if all_details_present?
@@ -62,6 +62,7 @@ class ReportMarkerGUI < ReportMarker
     details[:input_filename] = ReportMarker.summary_input_filename
     details[:output_filename] = ReportMarker.summary_output_filename_part_two(part_one_details[:student_number])
     ReportMarker.generate_summary_part_two(details)
+    VR::Dialog.message_box("Part 2 saved successfully", title = "Marking Assistant")
   end
   
   def part_two_details
@@ -86,6 +87,7 @@ class ReportMarkerGUI < ReportMarker
     details[:output_filename] = ReportMarker.summary_output_filename_part_one(part_one_details[:student_number])
 
     ReportMarker.generate_summary_part_one(details)
+    VR::Dialog.message_box("Part 1 saved successfully", title = "Marking Assistant")
   end
   
   def part_one_details
