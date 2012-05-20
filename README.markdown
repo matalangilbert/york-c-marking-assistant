@@ -20,13 +20,14 @@ Simply fill in your name, and the student number, and then check the boxes the s
 
 Pressing the <b>Save</b> button will save the details of the _Part_ you are currently editing. Partial files are created in subdirectories (_part_1_ and _part_2_.) of the output directory you select when asked. When both Parts have been completed for a student, full and summary marksheets are created in the output directory.
 
-<h1>Questions, Issues, Bug Reports</h1>
-Either raise issues directly through GitHub, or direct all questions, issues and bug reports to Mat Alan Gilbert: mag501@york.ac.uk
-
 <h3>Currently tested on</h3>
 * ruby 1.9.3p194 - Linux Mint 12
 * ruby 1.9.2-p290 - Microsoft Windows XP
 
+If you install and run the gem on any other setups, let me know and I'll add to the above list.
+
+<h1>Questions, Issues, Bug Reports</h1>
+Either raise issues directly via GitHub, or direct all questions, issues and bug reports to Mat Alan Gilbert: mag501@york.ac.uk
 
 <h3>Developer notes - the current code..</h3>
 This code has just been thrown together - it grew from a CLI script written to save marking time. It's not clean, and it's not pretty, but is stable as far as it's been tested, and does the job. It does need a lot of refactoring and tidying up (this is on the TODO list!)!
