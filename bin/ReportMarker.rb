@@ -2,14 +2,12 @@ class ReportMarker
   require 'prawn'
   require 'json'
 
-  
-  
   def self.marking_form_input_filename
-    "assets/assignment-mark-form.pdf"
+    "#{assets_dir}/assignment-mark-form.pdf"
   end
   
   def self.summary_input_filename
-    "assets/summary-mark-form.pdf"
+    "#{assets_dir}/summary-mark-form.pdf"
   end
   
   def self.output_directory
@@ -18,6 +16,21 @@ class ReportMarker
   
   def self.output_directory=(value)
     @output_directory = value
+  end
+  
+  def self.assets_dir
+    assets_root = nil
+
+    # if running as a gem
+    Gem::Specification.each do |installed_gem|
+      if installed_gem.name == 'yorkcmarker'
+        spec = Gem::Specification.find_by_name('yorkcmarker')
+        assets_root = spec.gem_dir + "/assets"
+      end
+    end
+    # if running as a script
+    if assets_root.nil? then assets_root = "assets" end
+    assets_root
   end
    
   def self.marking_form_output_filename_part_one(student_number)
