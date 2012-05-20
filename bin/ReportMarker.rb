@@ -376,6 +376,9 @@ class ReportMarker
     end
     
     # write to json file for later retrieval
+    unless File.directory?("data")
+      Dir.mkdir "data"
+    end
     File.open("data/#{details[:student_number]}_part1.json","w") do |f|
       f.write(details.to_json)
     end
