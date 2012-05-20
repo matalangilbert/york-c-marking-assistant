@@ -26,7 +26,7 @@ class ReportMarkerGUI < ReportMarker
 		get_glade_all() # get values of controls
     
     if ReportMarker.output_directory.nil?
-      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.")
+      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.", title = "Marking Assistant")
       p ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
     end
 
