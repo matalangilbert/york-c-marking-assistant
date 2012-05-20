@@ -2,3 +2,4 @@
 *.json
 completed_marksheets/*
 .rvmrc
+.vr_settings*
