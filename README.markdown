@@ -15,6 +15,12 @@ You will need a Ruby Interpreter installed. Ruby installers are available for Wi
 
 The gem has been developed and tested against _ruby 1.9.3p194_. It should work with earlier versions, but it's recommended you use the same version (at the time of writing it's the latest).
 
+<h3>Ubuntu Distros</h3>
+You need to have the libgtk2.0-dev package installed - you can do this using:
+```bash
+sudo apt-get install libgtk2.0-dev
+```
+
 <h1>Usage</h1>
 Simply fill in your name, and the student number, and then check the boxes the students have marks for. Multiple marks are awarded by checking multiple boxes for the appropriate statement.
 
@@ -26,6 +32,7 @@ Each part can be marked individually - for example, you can mark Part 1, close t
 <h4>Ruby versions:</h4>
 * ruby 1.9.3p194
 * ruby 1.9.2-p290
+* ruby 1.8.7
 
 <h4>Operating Systems:</h4>
 * Linux Mint 12
