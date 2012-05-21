@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require 'rubygems'
-require 'bundler/setup'
 require 'vrlib'
 
 #make program output in real time so errors visible in VR.
