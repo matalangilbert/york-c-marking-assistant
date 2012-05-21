@@ -126,7 +126,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.r1">
+                      <object class="GtkCheckButton" id="checkbutton_r1">
                         <property name="label" translatable="yes">Is there one?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -141,7 +141,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.r2">
+                      <object class="GtkCheckButton" id="checkbutton_r2">
                         <property name="label" translatable="yes">Are the requirements complete?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -2106,36 +2106,6 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                     <property name="n_rows">5</property>
                     <property name="n_columns">5</property>
                     <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
-                      <placeholder/>
-                    </child>
-                    <child>
                       <object class="GtkCheckButton" id="checkbutton_mcpi1">
                         <property name="label" translatable="yes">Is it reasonably concise (e.g. not having unnecesary C code)?</property>
                         <property name="visible">True</property>
@@ -2436,6 +2406,36 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="top_attach">4</property>
                         <property name="bottom_attach">5</property>
                       </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
                     </child>
                   </object>
                   <packing>

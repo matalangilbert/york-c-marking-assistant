@@ -14,11 +14,13 @@ class ReportMarkerGUI < ReportMarker
     @marker_name = nil
     @student_number = "Y"
 	end
+  
+  def load()
+    load_glade(__FILE__) #loads file, glade/ReportMarkerGUI.glade into @builder
+  end
 
 	def show()
-		load_glade(__FILE__)  #loads file, glade/ReportMarkerGUI.glade into @builder
 		set_glade_all(self) #populates glade controls with instance variables (i.e. Myclass.var1)
-    
 		show_window()
 	end
   
@@ -68,11 +70,11 @@ class ReportMarkerGUI < ReportMarker
   def part_two_details
     details = { :marker_name => @marker_name,
         :student_number => @student_number,
-        :implementation => implementation_totalled,
-        :code_listing => code_listing_totalled,
-        :testing_and_verification => testing_and_verification_totalled,
-        :user_manual => user_manual_totalled,
-        :mcpi => mcpi_totalled,
+        :implementation => implementation_marks,
+        :code_listing => code_listing_marks,
+        :testing_and_verification => testing_and_verification_marks,
+        :user_manual => user_manual_marks,
+        :mcpi => mcpi_marks,
         :input_filename => ReportMarker.marking_form_input_filename,
         :output_filename => ReportMarker.marking_form_output_filename_part_two(@student_number)
       }
@@ -105,14 +107,14 @@ class ReportMarkerGUI < ReportMarker
   end
   
   def part_one_marks
-    marks = { :requirements => requirements_totalled,
-      :analysis => analysis_totalled,
-      :specification => specification_totalled,
-      :design => design_totalled,
+    marks = { :requirements => requirements_marks,
+      :analysis => analysis_marks,
+      :specification => specification_marks,
+      :design => design_marks,
     }
   end
   
-  def implementation_totalled
+  def implementation_marks
     implementation = Array.new
     1.upto(3) do |checkbox_number|
       if @builder["checkbutton_i#{checkbox_number}"].active?
@@ -124,7 +126,7 @@ class ReportMarkerGUI < ReportMarker
     implementation
   end
   
-  def code_listing_totalled
+  def code_listing_marks
     code_listing = Array.new
     1.upto(11) do |checkbox_number|
       if @builder["checkbutton_cl#{checkbox_number}"].active?
@@ -146,7 +148,7 @@ class ReportMarkerGUI < ReportMarker
     code_listing
   end
   
-  def testing_and_verification_totalled
+  def testing_and_verification_marks
     testing_and_verification = Array.new
     1.upto(5) do |checkbox_number|
       if @builder["checkbutton_tv#{checkbox_number}"].active?
@@ -158,7 +160,7 @@ class ReportMarkerGUI < ReportMarker
     testing_and_verification
   end
   
-  def user_manual_totalled
+  def user_manual_marks
     user_manual = Array.new
     1.upto(7) do |checkbox_number|
       if @builder["checkbutton_ui#{checkbox_number}"].active?
@@ -170,7 +172,7 @@ class ReportMarkerGUI < ReportMarker
     user_manual
   end
   
-  def mcpi_totalled
+  def mcpi_marks
         mcpi = Array.new
     1.upto(5) do |checkbox_number|
       if @builder["checkbutton_mcpi#{checkbox_number}"].active?
@@ -208,19 +210,19 @@ class ReportMarkerGUI < ReportMarker
     !answer
   end
   
-  def requirements_totalled
-    requirements_combined = Array.new
-    requirements_checkboxes.each do |got_mark|
-      if got_mark
-        requirements_combined << 1
+  def requirements_marks
+    requirements = Array.new
+    1.upto(2) do |checkbox_number|
+      if @builder["checkbutton_r#{checkbox_number}"].active?
+        requirements << 1
       else
-        requirements_combined << 0
+        requirements << 0
       end
     end
-    requirements_combined
+    requirements
   end
   
-  def analysis_totalled
+  def analysis_marks
     analysis_combined = Array.new
     analysis_checkboxes.each_with_index do |got_mark, index|
       case index
@@ -239,7 +241,7 @@ class ReportMarkerGUI < ReportMarker
     analysis_combined
   end
   
-  def specification_totalled
+  def specification_marks
     specification_combined = Array.new
     specification_checkboxes.each do |got_mark|
       if got_mark
@@ -251,7 +253,7 @@ class ReportMarkerGUI < ReportMarker
     specification_combined
   end
   
-  def design_totalled
+  def design_marks
     design_combined = Array.new
     design_checkboxes.each_with_index do |got_mark, index|
       case index
