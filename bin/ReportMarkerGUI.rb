@@ -245,34 +245,37 @@ class ReportMarkerGUI < ReportMarker
   end
   
   def specification_marks
-    specification_combined = Array.new
-    specification_checkboxes.each do |got_mark|
-      if got_mark
-        specification_combined << 1
+    specification = Array.new
+    1.upto(3) do |checkbox_number|
+      if @builder["checkbutton_s#{checkbox_number}"].active?
+        specification << 1
       else
-        specification_combined << 0
+        specification << 0
       end
     end
-    specification_combined
+    specification
   end
   
   def design_marks
-    design_combined = Array.new
-    design_checkboxes.each_with_index do |got_mark, index|
-      case index
-      when 0, 1, 3, 5, 7, 10, 12, 14, 17, 20, 23 # when is a question
-        if got_mark
-          design_combined << 1 # add entry to array
-        else
-          design_combined << 0
-        end
-      else # increment current question total
-        if got_mark
-          design_combined[design_combined.length-1] = design_combined.last + 1
+    design = Array.new
+    1.upto(11) do |checkbox_number|
+      if @builder["checkbutton_d#{checkbox_number}"].active?
+        design << 1
+      else
+        design << 0
+      end
+    end
+    
+    1.upto(11) do |question_number|
+      1.upto(11) do |additional_mark|
+        unless @builder["checkbutton_d#{question_number}_#{additional_mark}"].nil?
+          if @builder["checkbutton_d#{question_number}_#{additional_mark}"].active?
+            design[question_number-1] += 1
+          end
         end
       end
     end
-    design_combined
+    design
   end
   
   def requirements_checkboxes
