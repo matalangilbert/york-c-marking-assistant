@@ -4,3 +4,4 @@ completed_marksheets/*
 .rvmrc
 .vr_settings*
 *.gem
+Gemfile*
