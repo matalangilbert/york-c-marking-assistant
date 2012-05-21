@@ -3,14 +3,6 @@ class ReportMarkerGUI < ReportMarker
 	include GladeGUI
 
 	def initialize
-		@r1 = @r2 = false
-    @a1 = @a2 = @a3 = @a4 = @a5 =@a5_2 = @a6 = @a6_2 = false
-    @a7 = @a7_2 = false
-    @s1 = @s2 = @s3 = false
-    @d1 = @d2 = @d2_2 = @d3 = @d3_2 = @d4 = @d4_2 = @d5 = false
-    @d5_2 = @d5_3 = @d6 = @d6_2 = @d7 = @d7_2 = false
-    @d8 = @d8_2 = @d8_3 = @d9 = @d9_2 = @d9_3 = @d10 = false
-    @d10_2 = @d10_3 = @d11 = @d11_2 = false
     @marker_name = nil
     @student_number = "Y"
 	end
@@ -20,6 +12,7 @@ class ReportMarkerGUI < ReportMarker
   end
 
 	def show()
+    load()
 		set_glade_all(self) #populates glade controls with instance variables (i.e. Myclass.var1)
 		show_window()
 	end
@@ -278,28 +271,4 @@ class ReportMarkerGUI < ReportMarker
     design
   end
   
-  def requirements_checkboxes
-    requirements = Array.new
-    requirements << @r1 << @r2
-  end
-  
-  def analysis_checkboxes
-    analysis = Array.new
-    analysis << @a1 << @a2 << @a3 << @a4 << @a5 << @a5_2 <<
-      @a6 << @a6_2 << @a7 << @a7_2
-  end
-  
-  def specification_checkboxes
-    specification = Array.new
-    specification << @s1 << @s2 << @s3
-  end
-  
-  def design_checkboxes
-    design = Array.new
-    design << @d1 << @d2 << @d2_2 << @d3 << @d3_2 << @d4 <<
-      @d4_2 << @d5 << @d5_2 << @d5_3 << @d6 << @d6_2 << @d7 <<
-      @d7_2 << @d8 << @d8_2 << @d8_3 << @d9 << @d9_2 <<
-      @d9_3 << @d10 << @d10_2 << @d10_3 << @d11 << @d11_2
-  end
-
 end
