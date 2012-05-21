@@ -223,23 +223,6 @@ class ReportMarkerGUI < ReportMarker
   end
   
   def analysis_marks
-    analysis_combined = Array.new
-    analysis_checkboxes.each_with_index do |got_mark, index|
-      case index
-      when 0..4, 6, 8 # when is a question
-        if got_mark
-          analysis_combined << 1  # add entry to array
-        else
-          analysis_combined << 0
-        end
-      else # increment current question total
-        if got_mark
-          analysis_combined[analysis_combined.length-1] = analysis_combined.last + 1
-        end
-      end
-    end
-    analysis_combined
-    
     analysis = Array.new
     1.upto(7) do |checkbox_number|
       if @builder["checkbutton_a#{checkbox_number}"].active?
