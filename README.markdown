@@ -20,6 +20,7 @@ You need to have the libgtk2.0-dev package installed - you can do this using:
 ```bash
 sudo apt-get install libgtk2.0-dev
 ```
+Thanks to Yuan for catching this!
 
 <h1>Usage</h1>
 Simply fill in your name, and the student number, and then check the boxes the students have marks for. Multiple marks are awarded by checking multiple boxes for the appropriate statement.
