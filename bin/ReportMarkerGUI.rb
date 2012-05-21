@@ -1,16 +1,19 @@
 class ReportMarkerGUI < ReportMarker
-
 	include GladeGUI
 
+  # initialize marker name and student number to allow
+  # access to GUI fields as instance variables
 	def initialize
     @marker_name = nil
     @student_number = "Y"
 	end
   
+  # load the GUI from the Glade (glade-gtk2) layout file
   def load()
     load_glade(__FILE__) #loads file, glade/ReportMarkerGUI.glade into @builder
   end
 
+  # show the GUI window
 	def show()
     load()
 		set_glade_all(self) #populates glade controls with instance variables (i.e. Myclass.var1)
@@ -20,10 +23,7 @@ class ReportMarkerGUI < ReportMarker
 	def buttonSave__clicked(button)
 		get_glade_all() # get values of controls
     
-    if ReportMarker.output_directory.nil?
-      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.", title = "Marking Assistant")
-      ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
-    end
+    set_output_directory_if_required
 
     if all_details_present?
       case @builder["notepad_parts"].page
@@ -50,6 +50,13 @@ class ReportMarkerGUI < ReportMarker
       end
     end
 	end
+  
+  def set_output_directory_if_required
+    if ReportMarker.output_directory.nil?
+      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.", title = "Marking Assistant")
+      ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
+    end
+  end
   
   def save_part_two
     details = part_two_details
