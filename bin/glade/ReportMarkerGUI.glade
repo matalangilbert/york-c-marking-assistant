@@ -274,7 +274,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                     <property name="n_rows">7</property>
                     <property name="n_columns">2</property>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a7">
+                      <object class="GtkCheckButton" id="checkbutton_a7">
                         <property name="label" translatable="yes">Analysis of known processes/algorithms?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -296,7 +296,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="xalign">1</property>
                         <property name="xscale">0</property>
                         <child>
-                          <object class="GtkCheckButton" id="ReportMarkerGUI.a6_2">
+                          <object class="GtkCheckButton" id="checkbutton_a6_2">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -317,7 +317,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="xalign">1</property>
                         <property name="xscale">0</property>
                         <child>
-                          <object class="GtkCheckButton" id="ReportMarkerGUI.a5_2">
+                          <object class="GtkCheckButton" id="checkbutton_a5_2">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
@@ -332,7 +332,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a1">
+                      <object class="GtkCheckButton" id="checkbutton_a1">
                         <property name="label" translatable="yes">Is there one?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -346,7 +346,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a2">
+                      <object class="GtkCheckButton" id="checkbutton_a2">
                         <property name="label" translatable="yes">Does it expand on the requirements?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -362,7 +362,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a3">
+                      <object class="GtkCheckButton" id="checkbutton_a3">
                         <property name="label" translatable="yes">Does it treat the problem as a black box?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -378,7 +378,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a4">
+                      <object class="GtkCheckButton" id="checkbutton_a4">
                         <property name="label" translatable="yes">Does it identify the user?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -394,7 +394,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a5">
+                      <object class="GtkCheckButton" id="checkbutton_a5">
                         <property name="label" translatable="yes">Analysis of inputs (units and range)?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -410,7 +410,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkCheckButton" id="ReportMarkerGUI.a6">
+                      <object class="GtkCheckButton" id="checkbutton_a6">
                         <property name="label" translatable="yes">Analysis of outputs (units and range)?</property>
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -432,7 +432,7 @@ by Mat Gilbert&lt;i&gt; http://matalangilbert.blogspot.com&lt;/i&gt;</property>
                         <property name="xalign">1</property>
                         <property name="xscale">0</property>
                         <child>
-                          <object class="GtkCheckButton" id="ReportMarkerGUI.a7_2">
+                          <object class="GtkCheckButton" id="checkbutton_a7_2">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>

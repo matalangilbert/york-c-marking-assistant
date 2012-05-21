@@ -173,7 +173,7 @@ class ReportMarkerGUI < ReportMarker
   end
   
   def mcpi_marks
-        mcpi = Array.new
+    mcpi = Array.new
     1.upto(5) do |checkbox_number|
       if @builder["checkbutton_mcpi#{checkbox_number}"].active?
         mcpi << 1
@@ -239,6 +239,26 @@ class ReportMarkerGUI < ReportMarker
       end
     end
     analysis_combined
+    
+    analysis = Array.new
+    1.upto(7) do |checkbox_number|
+      if @builder["checkbutton_a#{checkbox_number}"].active?
+        analysis << 1
+      else
+        analysis << 0
+      end
+    end
+    
+    1.upto(7) do |question_number|
+      1.upto(7) do |additional_mark|
+        unless @builder["checkbutton_a#{question_number}_#{additional_mark}"].nil?
+          if @builder["checkbutton_a#{question_number}_#{additional_mark}"].active?
+            analysis[question_number-1] += 1
+          end
+        end
+      end
+    end
+    analysis
   end
   
   def specification_marks
