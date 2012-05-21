@@ -29,16 +29,20 @@ Pressing the <b>Save</b> button will save the details of the _Part_ you are curr
 Each part can be marked individually - for example, you can mark Part 1, close the program, come back and mark Part 2 another time, and the program will then generate the completed marksheets.
 
 <h2>Currently tested on:</h2>
-<h4>Ruby versions:</h4>
+<h4>Ruby versions</h4>
+Check with: 
+```ruby
+ruby -v
+```
 * ruby 1.9.3p194
 * ruby 1.9.2-p290
 * ruby 1.8.7
 
 <h4>Operating Systems:</h4>
-* Linux Mint 12
+* Linux Mint 12 (see [_libgtk2.0-dev_](https://github.com/freefallertam/york-c-marking-assistant/edit/master/README.markdown#ubuntu-distros) requirement above)
+* Ubuntu (see [_libgtk2.0-dev_](https://github.com/freefallertam/york-c-marking-assistant/edit/master/README.markdown#ubuntu-distros) requirement above)
 * Microsoft Windows XP
 * Microsoft Window Vista
-
 
 If you install and run the gem on any other setups, let me know and I'll add to the above list.
 
