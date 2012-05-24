@@ -27,7 +27,7 @@ Simply fill in your name, and the student number, and then check the boxes the s
 
 Pressing the <b>Save</b> button will save the details of the _Part_ you are currently editing. Partial files are created in subdirectories (_part_1_ and _part_2_) of the output directory you select when asked. When both Parts have been completed for a student, full and summary marksheets are created in the output directory.
 
-Each part can be marked individually - for example, you can mark Part 1, close the program, come back and mark Part 2 another time, and the program will then generate the completed marksheets.
+Each part can be marked individually - for example, you can mark Part 1, close the program, come back and mark Part 2 another time, and the program will then generate the completed marksheets. The data is sort in JSON form, in _output directory/data_.
 
 <h2>Currently tested on:</h2>
 <h4>Ruby versions</h4>
