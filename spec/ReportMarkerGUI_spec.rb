@@ -7,7 +7,7 @@ describe ReportMarkerGUI do
   
   describe '#requirements_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     context 'when no marks awarded' do
       it 'totals 0' do
@@ -55,7 +55,7 @@ describe ReportMarkerGUI do
   
   describe '#analysis_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 7 marks' do
       @gui.analysis_marks.length.should eq 7
@@ -77,7 +77,7 @@ describe ReportMarkerGUI do
   
   describe '#specification_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 3 marks' do
       @gui.specification_marks.length.should eq 3
@@ -103,7 +103,7 @@ describe ReportMarkerGUI do
   
   describe '#design_marks' do
      before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 11 marks' do
       @gui.design_marks.length.should eq 11
@@ -134,7 +134,7 @@ describe ReportMarkerGUI do
 
   describe '#implementation_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 3 marks' do
       @gui.implementation_marks.length.should eq 3
@@ -202,7 +202,7 @@ describe ReportMarkerGUI do
   
   describe '#code_listing_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 11 marks' do
       @gui.code_listing_marks.length.should eq 11
@@ -288,7 +288,7 @@ describe ReportMarkerGUI do
   
   describe '#testing_and_verification_marks' do
     before(:each) do
-      @gui.load
+      @gui.load_from_layout
     end
     it 'consists of 5 marks' do
       @gui.testing_and_verification_marks.length.should eq 5
