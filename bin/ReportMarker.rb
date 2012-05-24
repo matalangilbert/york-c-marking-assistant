@@ -68,6 +68,13 @@ class ReportMarker
   def self.summary_out_output_filename(student_number)
     "#{output_directory}/#{student_number}_summary.pdf"
   end
+  
+  def self.data_directory
+    unless File.directory?("#{output_directory}/part_2")
+      Dir.mkdir("#{output_directory}/data")
+    end
+    "#{output_directory}/data"
+  end
  
   def self.check_details(details)
     # check for required information
@@ -82,20 +89,20 @@ class ReportMarker
     
   def self.generate_complete(student_number)
     part_one_details = nil
-    File.open("data/#{student_number}_part1.json","r") do |f|
+    File.open("#{data_directory}/#{student_number}_part1.json","r") do |f|
       part_one_details = JSON.parse(f.read, :symbolize_names => true)
     end
     
     part_two_details = nil
-    File.open("data/#{student_number}_part2.json","r") do |f|
+    File.open("#{data_directory}/#{student_number}_part2.json","r") do |f|
       part_two_details = JSON.parse(f.read, :symbolize_names => true)
     end
     
     details = part_one_details.merge(part_two_details)
     details[:input_filename] = "#{marking_form_input_filename}"
     details[:output_filename] = "#{marking_form_output_filename(student_number)}"
-    if File.exists?("data/#{details[:student_number]}_demonstration.json")
-      File.open("data/#{details[:student_number]}_demonstration.json","r") do |f|
+    if File.exists?("#{data_directory}/#{details[:student_number]}_demonstration.json")
+      File.open("#{data_directory}/#{details[:student_number]}_demonstration.json","r") do |f|
         demonstration_details = JSON.parse(f.read, :symbolize_names => true)
         details[:demonstration_mark] = demonstration_details[:demonstration_mark]
       end
@@ -433,10 +440,7 @@ class ReportMarker
     end
     
     # write to json file for later retrieval
-    unless File.directory?("data")
-      Dir.mkdir "data"
-    end
-    File.open("data/#{details[:student_number]}_part1.json","w") do |f|
+    File.open("#{data_directory}/#{details[:student_number]}_part1.json","w") do |f|
       f.write(details.to_json)
     end
     
@@ -530,10 +534,7 @@ class ReportMarker
     check_details(details)
     
     # write to json file for later retrieval
-    unless File.directory?("data")
-      Dir.mkdir "data"
-    end
-    File.open("data/#{details[:student_number]}_part2.json","w") do |f|
+    File.open("#{data_directory}/#{details[:student_number]}_part2.json","w") do |f|
       f.write(details.to_json)
     end
     
@@ -768,10 +769,7 @@ class ReportMarker
 
   def self.save_demonstration_mark(details)
     # write to json file for later retrieval
-    unless File.directory?("data")
-      Dir.mkdir "data"
-    end
-    File.open("data/#{details[:student_number]}_demonstration.json","w") do |f|
+    File.open("#{data_directory}/#{details[:student_number]}_demonstration.json","w") do |f|
       f.write(details.to_json)
     end
   end

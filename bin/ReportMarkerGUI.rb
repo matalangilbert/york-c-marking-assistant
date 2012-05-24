@@ -25,7 +25,7 @@ class ReportMarkerGUI < ReportMarker
     
    set_output_directory_if_required
   
-load('~/Documents/Ruby/cmarking2/bin/ReportMarker.rb')
+#load('~/Documents/Ruby/cmarking2/bin/ReportMarker.rb')
    
     if all_details_present?
       case @builder["notepad_parts"].page
@@ -52,7 +52,7 @@ load('~/Documents/Ruby/cmarking2/bin/ReportMarker.rb')
         })
         VR::Dialog.message_box("Demonstration mark saved successfully", title = "Marking Assistant")
       end
-      if File.exists?("data/#{@student_number}_part1.json") && File.exists?("data/#{@student_number}_part2.json")
+      if File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part1.json") && File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part2.json") && File.exists?("#{ReportMarker.data_directory}/#{@student_number}_demonstration.json")
         ReportMarker.generate_complete(@student_number)
         VR::Dialog.message_box("Completed marksheets saved to: #{ReportMarker.output_directory}", title = "Marking Assistant")
       end
