@@ -94,7 +94,12 @@ class ReportMarker
     details = part_one_details.merge(part_two_details)
     details[:input_filename] = "#{marking_form_input_filename}"
     details[:output_filename] = "#{marking_form_output_filename(student_number)}"
-    
+    if File.exists?("data/#{details[:student_number]}_demonstration.json")
+      File.open("data/#{details[:student_number]}_demonstration.json","r") do |f|
+        demonstration_details = JSON.parse(f.read, :symbolize_names => true)
+        details[:demonstration_mark] = demonstration_details[:demonstration_mark]
+      end
+    end
     save(details)
     
   end
@@ -267,20 +272,32 @@ class ReportMarker
         stamp_at("#{mcpi_total_marks}_mark", [x, mcpi_y-81])
       end
       
+      # Demonstration
+      unless details[:demonstration_mark].nil?
+        stamp_at("#{details[:demonstration_mark]}_mark",
+          [x, 106])
+      end
+      
      # Total Mark
-      total_mark = details[:requirements].inject(:+) +
-        details[:analysis].inject(:+) +
-        details[:specification].inject(:+) +
-        details[:design].inject(:+) +
-        details[:implementation].inject(:+) +
-        code_listing_total_marks +
-        details[:testing_and_verification].inject(:+) +
-        details[:user_manual].inject(:+) +
-        mcpi_total_marks
-      go_to_page(1)
-      stamp_at "#{total_mark}_mark", [x, total_mark_position[:y]]
+      unless details[:demonstration_mark].nil?
+        total_mark = details[:requirements].inject(:+) +
+          details[:analysis].inject(:+) +
+          details[:specification].inject(:+) +
+          details[:design].inject(:+) +
+          details[:implementation].inject(:+) +
+          code_listing_total_marks +
+          details[:testing_and_verification].inject(:+) +
+          details[:user_manual].inject(:+) +
+          mcpi_total_marks +
+          details[:demonstration_mark]
+        go_to_page(1)
+        stamp_at "#{total_mark}_mark", [x, total_mark_position[:y]]
+        details[:total_mark] = total_mark
+      end
     end
-    generate_summary(details)
+    unless details[:demonstration_mark].nil?
+      generate_summary(details)
+    end
     
   end
     
@@ -312,10 +329,10 @@ class ReportMarker
     :testing_and_verification => details[:testing_and_verification].inject(:+),
     :user_manual => details[:user_manual].inject(:+),
     :mcpi => mcpi,
+    :demonstration_mark => details[:demonstration_mark],
     :input_filename => summary_input_filename,
     :output_filename => "#{summary_out_output_filename(details[:student_number])}"
     }
-    
 
     Prawn::Document.generate(summary_details[:output_filename], :template => summary_details[:input_filename]) do
       create_stamp("marker_name") do
@@ -326,7 +343,15 @@ class ReportMarker
         draw_text summary_details[:student_number], :at => [0, 0]
       end
     
+      # integer marks
       0.upto(100) do |stamp_number|
+        create_stamp("#{stamp_number}_mark") do
+          draw_text stamp_number.to_s, :at => [0, 0]
+        end
+      end
+      
+      # half marks for contribution
+      (0..100).step(0.5) do |stamp_number|
         create_stamp("#{stamp_number}_mark") do
           draw_text stamp_number.to_s, :at => [0, 0]
         end
@@ -372,6 +397,25 @@ class ReportMarker
         stamp_at("#{summary_details[:mcpi]}_mark",
           [totals_x_position,484])
       end
+      
+      # Demonstration
+      stamp_at("#{summary_details[:demonstration_mark]}_mark",
+        [totals_x_position, 466])
+        
+      # Total
+      total_mark = ras +
+        summary_details[:design] +
+        icl +
+        tv_ui +
+        summary_details[:mcpi] +
+        summary_details[:demonstration_mark]
+        
+      stamp_at("#{total_mark}_mark",
+        [totals_x_position, 450])
+        
+      # Contribution to Digital Electronics
+      stamp_at("#{total_mark.to_f/2}_mark",
+        [totals_x_position, 431])
     end
   end
   
@@ -486,6 +530,9 @@ class ReportMarker
     check_details(details)
     
     # write to json file for later retrieval
+    unless File.directory?("data")
+      Dir.mkdir "data"
+    end
     File.open("data/#{details[:student_number]}_part2.json","w") do |f|
       f.write(details.to_json)
     end
@@ -719,5 +766,15 @@ class ReportMarker
     end
   end
 
+  def self.save_demonstration_mark(details)
+    # write to json file for later retrieval
+    unless File.directory?("data")
+      Dir.mkdir "data"
+    end
+    File.open("data/#{details[:student_number]}_demonstration.json","w") do |f|
+      f.write(details.to_json)
+    end
+  end
+  
 end
 

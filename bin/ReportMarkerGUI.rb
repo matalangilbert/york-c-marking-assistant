@@ -9,13 +9,13 @@ class ReportMarkerGUI < ReportMarker
 	end
   
   # load the GUI from the Glade (glade-gtk2) layout file
-  def load()
+  def load_from_layout
     load_glade(__FILE__) #loads file, glade/ReportMarkerGUI.glade into @builder
   end
 
   # show the GUI window
 	def show()
-    load()
+    load_from_layout
 		set_glade_all(self) #populates glade controls with instance variables (i.e. Myclass.var1)
 		show_window()
 	end
@@ -23,8 +23,10 @@ class ReportMarkerGUI < ReportMarker
 	def buttonSave__clicked(button)
 		get_glade_all() # get values of controls
     
-    set_output_directory_if_required
-
+   set_output_directory_if_required
+  
+load('~/Documents/Ruby/cmarking2/bin/ReportMarker.rb')
+   
     if all_details_present?
       case @builder["notepad_parts"].page
       when 0
@@ -43,6 +45,12 @@ class ReportMarkerGUI < ReportMarker
         else
           save_part_two
         end
+      when 2
+        ReportMarker.save_demonstration_mark({
+          :student_number => @student_number,
+          :demonstration_mark => @builder["spinbutton_tdm"].value.to_i
+        })
+        VR::Dialog.message_box("Demonstration mark saved successfully", title = "Marking Assistant")
       end
       if File.exists?("data/#{@student_number}_part1.json") && File.exists?("data/#{@student_number}_part2.json")
         ReportMarker.generate_complete(@student_number)
