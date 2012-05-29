@@ -70,7 +70,7 @@ class ReportMarker
   end
   
   def self.data_directory
-    unless File.directory?("#{output_directory}/part_2")
+    unless File.directory?("#{output_directory}/data")
       Dir.mkdir("#{output_directory}/data")
     end
     "#{output_directory}/data"
