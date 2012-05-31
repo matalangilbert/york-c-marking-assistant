@@ -1,5 +1,6 @@
 class ReportMarkerGUI < ReportMarker
 	include GladeGUI
+  require_relative "Generator"
 
   # initialize marker name and student number to allow
   # access to GUI fields as instance variables
@@ -50,18 +51,23 @@ class ReportMarkerGUI < ReportMarker
           :student_number => @student_number,
           :demonstration_mark => @builder["spinbutton_tdm"].value.to_i
         })
-        VR::Dialog.message_box("Demonstration mark saved successfully", title = "Marking Assistant")
-      end
-      if File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part1.json") && File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part2.json") && File.exists?("#{ReportMarker.data_directory}/#{@student_number}_demonstration.json")
-        ReportMarker.generate_complete(@student_number)
-        VR::Dialog.message_box("Completed marksheets saved to: #{ReportMarker.output_directory}", title = "Marking Assistant")
+        VR::Dialog.message_box("Demonstration mark saved successfully",
+          title = "Marking Assistant")
       end
     end
 	end
   
+ 	def buttonGenerate__clicked(button)
+    set_output_directory_if_required
+    generator = Generator.new(ReportMarker.output_directory + "/data")
+    generator.generate
+  end
+  
   def set_output_directory_if_required
     if ReportMarker.output_directory.nil?
-      VR::Dialog.message_box("I don't know where to save the marksheets. Please tell me on the next screen.", title = "Marking Assistant")
+      VR::Dialog.message_box("I don't know where to save the marksheets. "\
+        "Please tell me on the next screen",
+        title = "Marking Assistant")
       ReportMarker.output_directory = VR::Dialog.folder_box(@builder)
     end
   end
@@ -82,9 +88,7 @@ class ReportMarkerGUI < ReportMarker
         :code_listing => code_listing_marks,
         :testing_and_verification => testing_and_verification_marks,
         :user_manual => user_manual_marks,
-        :mcpi => mcpi_marks,
-        :input_filename => ReportMarker.marking_form_input_filename,
-        :output_filename => ReportMarker.marking_form_output_filename_part_two(@student_number)
+        :mcpi => mcpi_marks
       }
   end
   
@@ -93,10 +97,6 @@ class ReportMarkerGUI < ReportMarker
     
     ReportMarker.generate_part_one(details)
     
-    details[:input_filename] = ReportMarker.summary_input_filename
-    details[:output_filename] = ReportMarker.summary_output_filename_part_one(part_one_details[:student_number])
-
-    ReportMarker.generate_summary_part_one(details)
     VR::Dialog.message_box("Part 1 saved successfully", title = "Marking Assistant")
   end
   
@@ -109,8 +109,6 @@ class ReportMarkerGUI < ReportMarker
       :analysis => marks[:analysis],
       :specification => marks[:specification],
       :design => marks[:design],
-      :input_filename => ReportMarker.marking_form_input_filename,
-      :output_filename => ReportMarker.marking_form_output_filename_part_one(@student_number)
     }
   end
   
