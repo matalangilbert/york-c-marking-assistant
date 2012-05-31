@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors = ["Mat Alan Gilbert"]
   s.email = "matalangilbert@gmail.com" # optional
   s.summary = "A marking assistant for the University of York Introduction to C course." # optional
-  s.homepage = "https://github.com/freefallertam/york-c-marking-assistant"  # optional
+  s.homepage = "https://github.com/matalangilbert/york-c-marking-assistant"  # optional
   s.description = "A marking assistant for the York University Introduction to C course. No official association with the University of York." # optional
 	s.executables = ['yorkcmarker']  # i.e. 'vr' (optional, blank if library project)
 	s.default_executable = ['yorkcmarker']  # i.e. 'vr' (optional, blank if library project)
