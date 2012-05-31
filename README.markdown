@@ -13,7 +13,7 @@ at the command prompt.
 
 You will need a Ruby Interpreter installed. Ruby installers are available for Windows, Linux and Mac. Follow the instructions here: http://www.ruby-lang.org/en/downloads/ to install Ruby.
 
-The gem has been developed and tested against _ruby 1.9.3p194_. It should work with earlier versions, but it's recommended you use the same version (at the time of writing it's the latest).
+The gem has been developed and tested against _ruby 1.9.3p194_. It should work with earlier versions (>= 1.9.2), but it's recommended you use the same version (at the time of writing it's the latest).
 
 <h3>Ubuntu Distros</h3>
 You need to have the libgtk2.0-dev package installed - you can do this using:
@@ -37,7 +37,6 @@ ruby -v
 ```
 * ruby 1.9.3p194
 * ruby 1.9.2-p290
-* ruby 1.8.7
 
 <h4>Operating Systems:</h4>
 * Linux Mint 12 (see [_libgtk2.0-dev_](https://github.com/freefallertam/york-c-marking-assistant/edit/master/README.markdown#ubuntu-distros) requirement above)
