@@ -61,6 +61,8 @@ class ReportMarkerGUI < ReportMarker
     set_output_directory_if_required
     generator = Generator.new(ReportMarker.output_directory + "/data")
     generator.generate
+    VR::Dialog.message_box("Generated marksheets saved to #{ReportMarker.output_directory}",
+    title = "Marking Assistant")
   end
   
   def set_output_directory_if_required
