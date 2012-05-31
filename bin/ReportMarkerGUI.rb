@@ -31,7 +31,7 @@ class ReportMarkerGUI < ReportMarker
     if all_details_present?
       case @builder["notepad_parts"].page
       when 0
-        if File.exists?(ReportMarker.marking_form_output_filename_part_one(@student_number))
+        if File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part1.json")
           if VR::Dialog.ok_box("You've already completed part one for this student, continuing will overwrite it.", title = "Marking Assistant")
             save_part_one
           end
@@ -39,7 +39,7 @@ class ReportMarkerGUI < ReportMarker
           save_part_one
         end
       when 1
-        if File.exists?(ReportMarker.marking_form_output_filename_part_two(@student_number))
+        if File.exists?("#{ReportMarker.data_directory}/#{@student_number}_part2.json")
           if VR::Dialog.ok_box("You've already completed part two for this student, continuing will overwrite it.", title = "Marking Assistant")
             save_part_two
           end
@@ -74,10 +74,8 @@ class ReportMarkerGUI < ReportMarker
   
   def save_part_two
     details = part_two_details
-    ReportMarker.generate_part_two(details)
-    details[:input_filename] = ReportMarker.summary_input_filename
-    details[:output_filename] = ReportMarker.summary_output_filename_part_two(part_one_details[:student_number])
-    ReportMarker.generate_summary_part_two(details)
+    ReportMarker.save_part_two(details)
+
     VR::Dialog.message_box("Part 2 saved successfully", title = "Marking Assistant")
   end
   
@@ -95,7 +93,7 @@ class ReportMarkerGUI < ReportMarker
   def save_part_one
     details = part_one_details
     
-    ReportMarker.generate_part_one(details)
+    ReportMarker.save_part_one(details)
     
     VR::Dialog.message_box("Part 1 saved successfully", title = "Marking Assistant")
   end

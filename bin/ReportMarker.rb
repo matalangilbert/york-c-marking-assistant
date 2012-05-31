@@ -99,13 +99,13 @@ class ReportMarker
           #stamp_at "minus", [x, total_mark_position[:y]-20]
           #stamp_at "#{details[:lateness]}_mark", [x, total_mark_position[:y]-20]
         #end
-      
-      unless details[:requirements].nil?
-        # Details
-        stamp_at "marker_name", [85, total_mark_position[:y]]
-        stamp_at "student_number", [215, total_mark_position[:y]-10]
-        stamp_at "date", [77, total_mark_position[:y]-21]
+      # Details
+      stamp_at "marker_name", [85, total_mark_position[:y]]
+      stamp_at "student_number", [215, total_mark_position[:y]-10]
+      stamp_at "date", [77, total_mark_position[:y]-21]
         
+        
+      unless details[:requirements].nil?
         part_one_total_mark = details[:requirements].inject(:+) +
           details[:analysis].inject(:+) +
           details[:specification].inject(:+) +
@@ -251,6 +251,7 @@ class ReportMarker
       end
       
      # Total Mark
+=begin
       total_mark = 0
       
       total_mark += part_one_total_mark unless part_one_total_mark.nil?
@@ -262,8 +263,9 @@ class ReportMarker
       go_to_page(1)
       stamp_at "#{total_mark}_mark", [x, total_mark_position[:y]]
       details[:total_mark] = total_mark
+=end
     end
-    puts "generated: #{details[:student_number]}\tmarksheet"
+    puts "generated: #{details[:student_number]} marksheet"
   end
   
   def self.generate_summary(details)
@@ -284,7 +286,7 @@ class ReportMarker
     # part two
     unless details[:implementation].nil?
       # remove negative marks
-      unless details[:code_listing].nil?
+      details[:code_listing].nil?
         code_listing = 0
         0.upto(8) do |question|
           code_listing += details[:code_listing][question]
@@ -292,9 +294,8 @@ class ReportMarker
         9.upto(10) do |penalty|
           code_listing -= details[:code_listing][penalty]
         end
-      end
-      summary_details[:ir_cl] = details[:implementation].inject(:+)
-        + code_listing
+      summary_details[:ir_cl] = details[:implementation].inject(:+) +
+        code_listing
      
       summary_details[:tv_ui] = details[:testing_and_verification].inject(:+) +
         details[:user_manual].inject(:+)
@@ -331,12 +332,14 @@ class ReportMarker
       end
       
       # half marks for contribution
+=begin
       (0..100).step(0.5) do |stamp_number|
         create_stamp("#{stamp_number}_mark") do
           draw_text stamp_number.to_s, :at => [0, 0]
         end
       end
-      
+=end
+
       stamp_at("student_number", [235,652])
       stamp_at("marker_name", [90,627])
       
@@ -384,8 +387,10 @@ class ReportMarker
       # Total
       total_mark = 0
       # Part One
-      total_mark += summary_details[:ras] unless summary_details[:ras].nil?
-      total_mark += summary_details[:design]
+      unless summary_details[:ras].nil?
+        total_mark += summary_details[:ras] unless summary_details[:ras].nil?
+        total_mark += summary_details[:design]
+      end
       # Part Two
       unless summary_details[:implementation].nil?
         total_mark += summary_details[:ir_cl]
@@ -408,11 +413,24 @@ class ReportMarker
 =end
     end
     
-    puts "generated: #{details[:student_number]}\tsummary"
+    puts "generated: #{details[:student_number]} summary"
   end
   
 
-
+  def self.save_part_one(details)
+    # write to json file for later retrieval
+    File.open("#{data_directory}/#{details[:student_number]}_part1.json","w") do |f|
+      f.write(details.to_json)
+    end
+  end
+  
+  def self.save_part_two(details)
+    # write to json file for later retrieval
+    File.open("#{data_directory}/#{details[:student_number]}_part2.json","w") do |f|
+      f.write(details.to_json)
+    end
+  end
+  
   def self.save_demonstration_mark(details)
     # write to json file for later retrieval
     File.open("#{data_directory}/#{details[:student_number]}_demonstration.json","w") do |f|
